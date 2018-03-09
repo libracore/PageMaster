@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Built with libracore PageMaster - https://libracore.com -->
+<html lang="en">
+<head>
+	<title>libracore - intelligente Datenintegrationen</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
+	<link rel="stylesheet" href="/assets/frappe/css/bootstrap.css">
+</head>
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#home">
+					<img style="width: 150px; margin: 5px;" src="/assets/pagemaster/images/libracore_wordmark.png" />
+				</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right" style="margin-top: 8px;" >
+                    <li><a href="#portfolio">Angebot</a></li>
+                    <li><a href="#services">News</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#pricing">Kontakt</a></li>
+                    <li><a href="#contact">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- /navbar -->
+<!-- content -->
+<br><br><br><br>
+	{% block login_content %}{% endblock %}
+	{% block start %}{% endblock %}
+	{% block angebot %}{% endblock %}
+	{% block detail %}{% endblock %}
+	{% block wieso %}{% endblock %}
+	{% block kunden %}{% endblock %}
+<!-- /content -->
+<!-- footer -->
+<footer class="web-footer">
+	<section class="footer-links">
+		<div class="container">
+			<div class="row footer-bottom-line">
+				<div class="text-muted small col-sm-6 col-xs-12">
+					<div>&copy; libracore GmbH<br>
+						Bodenwis 22c<br>
+						8493 Saland<br>
+						Schweiz
+					</div>
+				</div>
+				<div class="text-muted small col-sm-6 col-xs-12 text-right footer-powered">
+					<a href="https://www.libracore.com" target="_blank" class="text-muted">Powered by ERPNext / libracore business software</a>					
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+<!-- /footer -->
+<script>
+    $(document).ready(function() {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#home']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function() {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    })
+</script>
+</body>
+</html>
