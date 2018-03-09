@@ -1,6 +1,6 @@
 {% extends "www/libra_base.html" %}
 {% block section1 %}
 	<div class="col-xs-12">
-		<img src="/assets/pagemaster/images/libracore_overview.png" style="height: auto; width: 50vw; display: block; margin-left: auto; margin-right: auto;">
+		<img src="{% if image[0].value %}{{ image[0].value }}{% else %}/assets/pagemaster/images/libracore_overview.png{% endif %}" style="height: auto; width: 50vw; display: block; margin-left: auto; margin-right: auto;">
 	</div>
 {% endblock %}
