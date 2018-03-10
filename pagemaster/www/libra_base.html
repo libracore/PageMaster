@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Built with libracore PageMaster - https://libracore.com -->
+<!-- Built with libracore PageMaster in ERPNext - https://libracore.com -->
 <html lang="en" style="height: 100%;">
 	<head>
 		<title>libracore - intelligente Datenintegrationen</title>
@@ -10,45 +10,13 @@
 		<script src="/assets/frappe/js/lib/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="/assets/pagemaster/css/index.css">
 	</head>
-	<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" class="bg" style="{% if body_bg_img %}background-image:{{ body_bg_img[0].value }};{% endif %} height: 100%;">
-		<!-- navbar -->
-			<nav class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="/index">
-							<img style="width: 150px; margin: 5px;" src="/assets/pagemaster/images/libracore_wordmark.png" />
-						</a>
-					</div>
-					<div class="collapse navbar-collapse" id="myNavbar">
-						<ul class="nav navbar-nav navbar-right" style="margin-top: 8px;" >
-							<li><a href="#portfolio">Angebot</a></li>
-							<li><a href="#services">News</a></li>
-							<li><a href="#about">Über uns</a></li>
-							<li><a href="#pricing">Kontakt</a></li>
-							<li><a href="/login">Login</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		<!-- /navbar -->
 		<!-- content -->
-			<div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px;">
-				{% block section1 %}{% endblock %}
-				{% block section2 %}{% endblock %}
-				{% block section3 %}{% endblock %}
-				{% block section4 %}{% endblock %}
-				{% block section5 %}{% endblock %}
-				{% block section6 %}{% endblock %}
-				{% block section7 %}{% endblock %}
-				{% block section8 %}{% endblock %}
-				{% block section9 %}{% endblock %}
-				{% block section10 %}{% endblock %}
-			</div>
+			{% block main %}{% endblock %}
+			{% block section1 %}{% endblock %}
+			{% block section2 %}{% endblock %}
+			{% block section3 %}{% endblock %}
+			{% block section4 %}{% endblock %}
+			{% block section5 %}{% endblock %}
 		<!-- /content -->
 		<!-- footer -->
 		<footer class="web-footer">
