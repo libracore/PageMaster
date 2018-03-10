@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Built with libracore PageMaster - https://libracore.com -->
-<html lang="en">
+<html lang="en" style="height: 100%;">
 	<head>
 		<title>libracore - intelligente Datenintegrationen</title>
 		<meta charset="utf-8">
@@ -10,7 +10,7 @@
 		<script src="/assets/frappe/js/lib/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="/assets/pagemaster/css/index.css">
 	</head>
-	<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
+	<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" class="bg" style="{% if body_bg_img %}background-image:{{ body_bg_img[0].value }};{% endif %} height: 100%;">
 		<!-- navbar -->
 			<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
