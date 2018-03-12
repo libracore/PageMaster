@@ -1,31 +1,7 @@
 {% extends "www/libra_base.html" %}
 {% block main %}
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bodyimage %}background-image: url({{ bodyimagesource[0].value }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}">
-	<!-- navbar -->
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a href="/index">
-						<img style="width: 150px; margin: 5px;" src="/assets/pagemaster/images/libracore_wordmark.png" />
-					</a>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav navbar-right" style="margin-top: 8px;" >
-						<li><a href="#portfolio">Angebot</a></li>
-						<li><a href="#services">News</a></li>
-						<li><a href="#about">Über uns</a></li>
-						<li><a href="#pricing">Kontakt</a></li>
-						<li><a href="/login">Login</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	<!-- /navbar -->
+{% include "www/libra_navbar.html" %}
 {% endblock %}
 {% block section1 %}
 	<div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px;">
