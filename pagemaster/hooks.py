@@ -15,7 +15,7 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/pagemaster/css/pagemaster.css"
+app_include_css = "/assets/pagemaster/css/pagemaster.css"
 # app_include_js = "/assets/pagemaster/js/pagemaster.js"
 
 # include js, css files in header of web template

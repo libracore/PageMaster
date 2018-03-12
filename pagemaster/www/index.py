@@ -16,6 +16,7 @@ def get_context(context):
 	#tbd...
 	
 	#Part 1
+	#---------------
 	#-->image
 	context.image1 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
@@ -23,8 +24,7 @@ def get_context(context):
 		context.imagesource1 = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'img_part1' AND doctype = 'Main Page Setup'", as_dict=True)
 		
 	#-->slider
-	context.slider = False
+	context.slider1 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
-		context.slider = True
-		context.slideshow = frappe.get_doc("Page Slideshow", frappe.db.sql("SELECT name FROM `tabPage Slideshow`", as_dict=True)[0].name)
-		# to be completed....
+		context.slider1 = True
+		context.slideshow1 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
