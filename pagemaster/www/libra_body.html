@@ -1,0 +1,30 @@
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bodyimage %}background-image: url({{ bodyimagesource[0].value }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}">
+<!-- navbar -->
+	{% include "www/libra_navbar.html" %}
+<!-- /navbar -->
+<!-- content -->
+	<!-- part 1 -->
+		{% include "www/part1.html" %}
+	<!-- /part 1 -->
+<!-- /content -->
+<!-- footer -->
+	{% include "www/libra_footer.html" %}
+<!-- /footer -->
+<!-- Scroll to top button -->
+	<button class="btn" id="ToTopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button> 
+	<script>
+		$(document).ready(function() {
+			// Add smooth scrolling to all links in navbar + footer link
+			$("#ToTopBtn").on('click', function(event) {
+				// Using jQuery's animate() method to add smooth page scroll
+				// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+				$('html, body').animate({
+					scrollTop: 0
+				}, 900, function() {
+					// Add hash (#) to URL when done scrolling (default click behavior)
+					//window.location.hash = "#home";
+				});
+			});
+		})
+	</script>
+</body>

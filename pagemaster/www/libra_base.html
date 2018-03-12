@@ -1,60 +1,10 @@
 <!DOCTYPE html>
 <!-- Built with libracore PageMaster in ERPNext - https://libracore.com -->
 <html lang="en" style="height: 100%;">
-	<head>
-		<title>libracore - intelligente Datenintegrationen</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
-		<link rel="stylesheet" href="/assets/frappe/css/bootstrap.css">
-		<script src="/assets/frappe/js/lib/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="/assets/pagemaster/css/index.css">
-		<script src="/assets/pagemaster/js/index.js"></script>
-	</head>
-		<!-- content -->
-			{% block main %}{% endblock %}
-			{% block section1 %}{% endblock %}
-			{% block section2 %}{% endblock %}
-			{% block section3 %}{% endblock %}
-			{% block section4 %}{% endblock %}
-			{% block section5 %}{% endblock %}
-		<!-- /content -->
-		<!-- footer -->
-		<footer class="web-footer">
-			<section class="footer-links">
-				<div class="container">
-					<div class="row footer-bottom-line">
-						<div class="text-muted small col-sm-6 col-xs-12">
-							<div>&copy; libracore GmbH<br>
-								Bodenwis 22c<br>
-								8493 Saland<br>
-								Schweiz
-							</div>
-						</div>
-						<div class="text-muted small col-sm-6 col-xs-12 text-right footer-powered">
-							<a href="https://www.libracore.com" target="_blank" class="text-muted">Powered by ERPNext / libracore business software</a>					
-						</div>
-					</div>
-				</div>
-			</section>
-		</footer>
-		<!-- /footer -->
-		<!-- Scroll to top button -->
-		<button class="btn" id="ToTopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button> 
-		<script>
-			$(document).ready(function() {
-				// Add smooth scrolling to all links in navbar + footer link
-				$("#ToTopBtn").on('click', function(event) {
-					// Using jQuery's animate() method to add smooth page scroll
-					// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-					$('html, body').animate({
-						scrollTop: 0
-					}, 900, function() {
-						// Add hash (#) to URL when done scrolling (default click behavior)
-						//window.location.hash = "#home";
-					});
-				});
-			})
-		</script>
-	</body>
+	<!-- head -->
+	{% block head %}{% endblock %}
+	<!-- /head -->
+	<!-- Body -->
+		{% block body %}{% endblock %}
+	<!-- /body -->
 </html>

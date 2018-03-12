@@ -1,0 +1,9 @@
+<div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px;">
+	{% if image1 %}
+		{% set imagesource = imagesource1 %}
+		{% include "www/libra_image.html" %}
+	{% endif %}
+	{% if slider %}
+		{% include "www/libra_slider.html" %}
+	{% endif %}
+</div>
