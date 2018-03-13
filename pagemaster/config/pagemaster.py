@@ -12,13 +12,7 @@ def get_data():
 			   "name": "Main Page Setup",
 			   "label": _("Setup"),
 			   "description": _("Setup Tools for the Main Page")
-		   },
-		   {
-			   "type": "doctype",
-			   "name": "Page Slideshow",
-			   "label": _("Slideshow"),
-			   "description": _("Slideshows Setup")
-			}
+		   }
 		]
 	},
 	{
@@ -45,8 +39,8 @@ def get_data():
 			},
 			{
 			   "type": "doctype",
-			   "name": "Page Cards",
-			   "label": _("Cards"),
+			   "name": "Page Card Set",
+			   "label": _("Card Sets"),
 			   "description": _("Cards Setup")
 			}
 		]
