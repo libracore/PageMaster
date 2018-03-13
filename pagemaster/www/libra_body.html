@@ -1,14 +1,20 @@
-<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bodyimage %}background-image: url({{ bodyimagesource[0].value }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}">
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bodyimage %}background-image: url({{ bodyimagesource[0].value }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}{% if bodycolor %}background-color: {{ bodycolorcode[0].value }}{% endif %}">
 <!-- navbar -->
+	{% if navbar %}
 	{% include "www/libra_navbar.html" %}
+	{% endif %}
 <!-- /navbar -->
 <!-- content -->
 	<!-- part 1 -->
+		{% if parts >= 1 %}
 		{% include "www/part1.html" %}
+		{% endif %}
 	<!-- /part 1 -->
 <!-- /content -->
 <!-- footer -->
+	{% if footer %}
 	{% include "www/libra_footer.html" %}
+	{% endif %}
 <!-- /footer -->
 <!-- Scroll to top button -->
 	<button class="btn" id="ToTopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button> 
