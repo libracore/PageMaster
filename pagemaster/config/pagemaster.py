@@ -30,7 +30,25 @@ def get_data():
 			   "name": "Page Slideshow",
 			   "label": _("Slideshow"),
 			   "description": _("Slideshows Setup")
-		   }
+			}
+		]
+	},
+	{
+		"label": _("General"),
+		"icon": "fa fa-bookmark",
+		"items": [
+			{
+			   "type": "doctype",
+			   "name": "Page Slideshow",
+			   "label": _("Slideshow"),
+			   "description": _("Slideshows Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Page Cards",
+			   "label": _("Cards"),
+			   "description": _("Cards Setup")
+			}
 		]
 	}
 ]

@@ -49,6 +49,11 @@ def get_context(context):
 		context.slider1 = True
 		context.slideshow1 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
 		
+	#-->card
+	context.card1 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
+		context.card1 = True
+		
 	#Part 2
 	#---------------
 	#-->image
