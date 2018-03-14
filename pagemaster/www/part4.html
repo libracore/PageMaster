@@ -1,0 +1,67 @@
+<div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px;">
+	{% if image4 %}
+		{% set imagesource = imagesource4 %}
+		{% include "www/libra_image.html" %}
+	{% endif %}
+	{% if slider4 %}
+		{% set slideshow = slideshow4 %}
+		{% include "www/libra_slider.html" %}
+	{% endif %}
+	{% if card4 %}
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		{% set cards = cards4 %}
+		{% for card in cards %}
+		{% include "www/libra_card.html" %}
+		{% endfor %}
+		<style>
+		.card.x {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			max-width: 300px;
+			margin: auto;
+			text-align: center;
+		}
+		.title.x {
+			color: grey;
+			font-size: 18px;
+		}
+		button.x {
+			border: none;
+			outline: 0;
+			display: inline-block;
+			padding: 8px;
+			color: white;
+			background-color: #000;
+			text-align: center;
+			cursor: pointer;
+			width: 100%;
+			font-size: 18px;
+		}
+		a.x {
+			text-decoration: none;
+			font-size: 22px;
+			color: black;
+		}
+		button.x:hover, a.x:hover {
+			opacity: 0.7;
+		}
+		</style>
+	</div>
+	<div class="col-sm-2"></div>
+	{% endif %}
+	{% if text4 %}
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		{{ txt4 }}
+	</div>
+	<div class="col-sm-2"></div>
+	{% endif %}
+	{% if media4 %}
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		{% set medias = medias4 %}
+		{% include "www/libra_media.html" %}
+	</div>
+	<div class="col-sm-2"></div>
+	{% endif %}
+</div>

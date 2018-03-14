@@ -102,3 +102,105 @@ def get_context(context):
 		context.media2 = True
 		media2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part2'", as_dict=True)[0].value
 		context.medias2 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media2_parent+"' ORDER BY idx ASC", as_dict=True)
+		
+	#Part 3
+	#---------------
+	#-->image
+	context.image3 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
+		context.image3 = True
+		context.imagesource3 = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'img_part3' AND doctype = 'Main Page Setup'", as_dict=True)
+		
+	#-->slider
+	context.slider3 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
+		context.slider3 = True
+		context.slideshow3 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
+		
+	#-->card
+	context.card3 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
+		context.card3 = True
+		card3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part3'", as_dict=True)[0].value
+		context.cards3 = frappe.db.sql("SELECT link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card3_parent+"' ORDER BY idx ASC", as_dict=True)
+		
+	#-->Text
+	context.text3 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Text":
+		context.text3 = True
+		context.txt3 = frappe.db.sql("SELECT value FROM tabSingles WHERE doctype = 'Main Page Setup' AND field = 'txt_part3'", as_dict=True)[0].value
+		
+	#-->media
+	context.media3 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
+		context.media3 = True
+		media3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part3'", as_dict=True)[0].value
+		context.medias3 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media3_parent+"' ORDER BY idx ASC", as_dict=True)
+		
+	#Part 4
+	#---------------
+	#-->image
+	context.image4 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
+		context.image4 = True
+		context.imagesource4 = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'img_part4' AND doctype = 'Main Page Setup'", as_dict=True)
+		
+	#-->slider
+	context.slider4 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
+		context.slider4 = True
+		context.slideshow4 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
+		
+	#-->card
+	context.card4 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
+		context.card4 = True
+		card4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part4'", as_dict=True)[0].value
+		context.cards4 = frappe.db.sql("SELECT link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card4_parent+"' ORDER BY idx ASC", as_dict=True)
+		
+	#-->Text
+	context.text4 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Text":
+		context.text4 = True
+		context.txt4 = frappe.db.sql("SELECT value FROM tabSingles WHERE doctype = 'Main Page Setup' AND field = 'txt_part4'", as_dict=True)[0].value
+		
+	#-->media
+	context.media4 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
+		context.media4 = True
+		media4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part4'", as_dict=True)[0].value
+		context.medias4 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media4_parent+"' ORDER BY idx ASC", as_dict=True)
+		
+	#Part 5
+	#---------------
+	#-->image
+	context.image5 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
+		context.image5 = True
+		context.imagesource5 = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'img_part5' AND doctype = 'Main Page Setup'", as_dict=True)
+		
+	#-->slider
+	context.slider5 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
+		context.slider5 = True
+		context.slideshow5 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
+		
+	#-->card
+	context.card5 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
+		context.card5 = True
+		card5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part5'", as_dict=True)[0].value
+		context.cards5 = frappe.db.sql("SELECT link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card5_parent+"' ORDER BY idx ASC", as_dict=True)
+		
+	#-->Text
+	context.text5 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Text":
+		context.text5 = True
+		context.txt5 = frappe.db.sql("SELECT value FROM tabSingles WHERE doctype = 'Main Page Setup' AND field = 'txt_part5'", as_dict=True)[0].value
+		
+	#-->media
+	context.media5 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
+		context.media5 = True
+		media5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part5'", as_dict=True)[0].value
+		context.medias5 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media5_parent+"' ORDER BY idx ASC", as_dict=True)
