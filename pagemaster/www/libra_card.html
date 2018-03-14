@@ -7,7 +7,7 @@
 		{% endif %}
 		<h1>{{ card.title }}</h1>
 		<p class="title x">{{ card.subtitle_1 }}</p>
-		<p>{{ card.subtitle_2 }}</p>
+		{% if card.subtitle_2 %}<p>{{ card.subtitle_2 }}</p>{% endif %}
 		{% if card.link_twitter %}<a href="{{ card.link_twitter }}" class="x"><i class="fa fa-twitter"></i></a>{% endif %}
 		{% if card.link_linkedin %}<a href="{{ card.link_linkedin }}" class="x"><i class="fa fa-linkedin"></i></a>{% endif %}
 		{% if card.link_facebook %}<a href="{{ card.link_facebook }}" class="x"><i class="fa fa-facebook"></i></a>{% endif %}
