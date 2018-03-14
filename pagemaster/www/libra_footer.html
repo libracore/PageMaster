@@ -1,15 +1,15 @@
-<footer class="web-footer" style="background-color: {{ footer_bg_color }};">
+<footer class="web-footer" style="background-color: {% if footer_bg_color %}{{ footer_bg_color }}{% else %}rgba(255,255,255,0.5){% endif %}; border-color: transparent;">
 	<section class="footer-links">
 		<div class="container">
 			<div class="row footer-bottom-line">
-				<div class="text-muted small col-sm-6 col-xs-12" style="color: {{ footer_txt_color }};">
+				<div class="text-muted small col-sm-6 col-xs-12" style="color: {{ footer_txt_color }};"><br><br>
 					<div>&copy; libracore GmbH<br>
 						Bodenwis 22c<br>
 						8493 Saland<br>
-						Schweiz
+						Schweiz<br><br>
 					</div>
 				</div>
-				<div class="text-muted small col-sm-6 col-xs-12 text-right footer-powered">
+				<div class="text-muted small col-sm-6 col-xs-12 text-right footer-powered"><br><br>
 					<a href="https://www.libracore.com" target="_blank" class="text-muted" style="color: {{ footer_txt_color }};">Powered by ERPNext / libracore business software</a>					
 				</div>
 			</div>

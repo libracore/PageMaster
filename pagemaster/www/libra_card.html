@@ -4,9 +4,9 @@
 		<h1>{{ card.title }}</h1>
 		<p class="title x">{{ card.subtitle_1 }}</p>
 		<p>{{ card.subtitle_2 }}</p>
-		<a href="{{ card.link_twitter }}" class="x"><i class="fa fa-twitter"></i></a>
-		<a href="{{ card.link_linkedin }}" class="x"><i class="fa fa-linkedin"></i></a>
-		<a href="{{ card.link_facebook }}" class="x"><i class="fa fa-facebook"></i></a>
+		{% if card.link_twitter %}<a href="{{ card.link_twitter }}" class="x"><i class="fa fa-twitter"></i></a>{% endif %}
+		{% if card.link_linkedin %}<a href="{{ card.link_linkedin }}" class="x"><i class="fa fa-linkedin"></i></a>{% endif %}
+		{% if card.link_facebook %}<a href="{{ card.link_facebook }}" class="x"><i class="fa fa-facebook"></i></a>{% endif %}
 		<p><button href="{{ card.btn_link }}" class="x">{{ card.btn_title }}</button></p>
 	</div>
 </div>

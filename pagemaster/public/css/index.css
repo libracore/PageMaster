@@ -11,3 +11,26 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+#ToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(146,208,80,1);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 35px;
+    width: 60px;
+    height: 60px;
+}
+#ToTopBtn:hover {
+    background-color: transparent;
+    font-weight: bold;
+    color: rgba(146,208,80,1);
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid rgba(146,208,80,1);
+}

@@ -17,3 +17,25 @@ $('#myCarousel.carousel .itemm').each(function(){
     $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
   }
 });
+
+(function ($) {
+  $(document).ready(function(){
+	
+	// set "scroll to top"-Function
+	$(function () {
+        	$(window).scroll(function () {	
+			// scroll to top
+			scrollFunction();
+		});
+	});
+  });
+}(jQuery));
+
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("ToTopBtn").style.display = "block";
+    } else {
+        document.getElementById("ToTopBtn").style.display = "none";
+    }
+}

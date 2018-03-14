@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" style="background-color: {{ nav_bg_color }};">
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: {% if nav_bg_color %}{{ nav_bg_color }}{% else %}rgba(255,255,255,0.5){% endif %}; border-color: transparent;">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
