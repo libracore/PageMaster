@@ -1,4 +1,4 @@
-<div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px;">
+<div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px; {% if part2_bg %}background-color: {{ part2_bg }};{% endif %}{% if part2_height %}height: {{ part2_height }}px;{% endif %}">
 	{% if image2 %}
 		{% set imagesource = imagesource2 %}
 		{% include "www/libra_image.html" %}

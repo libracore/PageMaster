@@ -37,6 +37,12 @@ def get_context(context):
 	
 	#Part 1
 	#---------------
+	#ROW settings
+	#Height & Background-Color
+	if int(frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'set_height_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value) == 1:
+		context.part1_height = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'height_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	context.part1_bg = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	
 	#-->image
 	context.image1 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
@@ -71,6 +77,12 @@ def get_context(context):
 	
 	#Part 2
 	#---------------
+	#ROW settings
+	#Height & Background-Color
+	if int(frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'set_height_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value) == 1:
+		context.part2_height = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'height_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	context.part2_bg = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	
 	#-->image
 	context.image2 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
@@ -105,6 +117,12 @@ def get_context(context):
 		
 	#Part 3
 	#---------------
+	#ROW settings
+	#Height & Background-Color
+	if int(frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'set_height_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value) == 1:
+		context.part3_height = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'height_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	context.part3_bg = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	
 	#-->image
 	context.image3 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
@@ -139,6 +157,12 @@ def get_context(context):
 		
 	#Part 4
 	#---------------
+	#ROW settings
+	#Height & Background-Color
+	if int(frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'set_height_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value) == 1:
+		context.part4_height = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'height_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	context.part4_bg = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	
 	#-->image
 	context.image4 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
@@ -173,6 +197,12 @@ def get_context(context):
 		
 	#Part 5
 	#---------------
+	#ROW settings
+	#Height & Background-Color
+	if int(frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'set_height_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value) == 1:
+		context.part5_height = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'height_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	context.part5_bg = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	
 	#-->image
 	context.image5 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Image":
