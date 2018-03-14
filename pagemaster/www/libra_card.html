@@ -1,12 +1,12 @@
 <div class="col-md-3 col-sm-4">
 	<div class="card x">
-		<img src="img.jpg" alt="John" style="width:100%">
-		<h1>John Doe</h1>
-		<p class="title x">CEO & Founder, Example</p>
-		<p>Harvard University</p>
-		<a href="#" class="x"><i class="fa fa-twitter"></i></a>
-		<a href="#" class="x"><i class="fa fa-linkedin"></i></a>
-		<a href="#" class="x"><i class="fa fa-facebook"></i></a>
-		<p><button class="x">Contact</button></p>
+		<img src="{{ card.card_img }}" alt="{{ card.title }}" style="width:100%;">
+		<h1>{{ card.title }}</h1>
+		<p class="title x">{{ card.subtitle_1 }}</p>
+		<p>{{ card.subtitle_2 }}</p>
+		<a href="{{ card.link_twitter }}" class="x"><i class="fa fa-twitter"></i></a>
+		<a href="{{ card.link_linkedin }}" class="x"><i class="fa fa-linkedin"></i></a>
+		<a href="{{ card.link_facebook }}" class="x"><i class="fa fa-facebook"></i></a>
+		<p><button href="{{ card.btn_link }}" class="x">{{ card.btn_title }}</button></p>
 	</div>
 </div>
