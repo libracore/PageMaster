@@ -34,19 +34,19 @@ def get_data():
 			{
 			   "type": "doctype",
 			   "name": "About Us",
-			   "label": _("About Us Settings"),
+			   "label": _("Setup"),
 			   "description": _("About Us Setup")
 			}
 		]
 	},
 	{
-		"label": _("General"),
+		"label": _("General Data"),
 		"icon": "fa fa-bookmark",
 		"items": [
 			{
 			   "type": "doctype",
 			   "name": "Page Slideshow",
-			   "label": _("Slideshow"),
+			   "label": _("Slideshows"),
 			   "description": _("Slideshows Setup")
 			},
 			{
@@ -60,6 +60,12 @@ def get_data():
 			   "name": "Media Set",
 			   "label": _("Media Sets"),
 			   "description": _("Medias Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Timeline Set",
+			   "label": _("Timeline Sets"),
+			   "description": _("Timeline Setup")
 			}
 		]
 	}

@@ -2,9 +2,6 @@ from __future__ import unicode_literals
 import frappe
 
 def get_context(context):
-	#part qty
-	context.parts = int(frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'section_qty' AND doctype = 'Main Page Setup'", as_dict=True)[0].value)
-	
 	#body
 	#---------------
 	# -->Background-Image
