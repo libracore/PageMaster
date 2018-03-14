@@ -3,9 +3,13 @@
 <!-- Left-aligned -->
 <div class="media">
   <div class="media-left media-middle">
-    <img src="{{ media.media_img }}" alt="{{ media.title }}" class="media-object" style="width:60px">
+	{% if media.img_or_fa == "Image" %}
+    <img src="{{ media.media_img }}" alt="{{ media.title }}" class="media-object" style="width:{% if media.img_size %}{{ media.img_size }};{% else %}60px;{% endif %}">
+	{% elif media.img_or_fa == "Fontawesome" %}
+	<i class="{{ media.media_fa }}" style="font-size: {{ media.media_fa_size }};"></i>
+	{% endif %}
   </div>
-  <div class="media-body">
+  <div class="media-body" style="vertical-align: middle;">
     <h4 class="media-heading">{{ media.title }}</h4>
     <p>{{ media.subtitle }}</p>
   </div>
@@ -13,12 +17,16 @@
 {% elif media.medi_align == "Right" %}
 <!-- Right-aligned -->
 <div class="media">
-  <div class="media-body">
+  <div class="media-body" style="vertical-align: middle;">
     <h4 class="media-heading">{{ media.title }}</h4>
     <p>{{ media.subtitle }}</p>
   </div>
   <div class="media-right media-middle">
-    <img src="{{ media.media_img }}" alt="{{ media.title }}" class="media-object" style="width:60px">
+	{% if media.img_or_fa == "Image" %}
+    <img src="{{ media.media_img }}" alt="{{ media.title }}" class="media-object" style="width:{% if media.img_size %}{{ media.img_size }};{% else %}60px;{% endif %}">
+	{% elif media.img_or_fa == "Fontawesome" %}
+	<i class="{{ media.media_fa }}" style="font-size: {{ media.media_fa_size }};"></i>
+	{% endif %}
   </div>
 </div>
 {% endif %}

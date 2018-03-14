@@ -73,7 +73,7 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
 		context.media1 = True
 		media1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part1'", as_dict=True)[0].value
-		context.medias1 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media1_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.medias1 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media1_parent+"' ORDER BY idx ASC", as_dict=True)
 	
 	#Part 2
 	#---------------
@@ -113,7 +113,7 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
 		context.media2 = True
 		media2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part2'", as_dict=True)[0].value
-		context.medias2 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media2_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.medias2 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media2_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 3
 	#---------------
@@ -153,7 +153,7 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
 		context.media3 = True
 		media3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part3'", as_dict=True)[0].value
-		context.medias3 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media3_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.medias3 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media3_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 4
 	#---------------
@@ -193,7 +193,7 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
 		context.media4 = True
 		media4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part4'", as_dict=True)[0].value
-		context.medias4 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media4_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.medias4 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media4_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 5
 	#---------------
@@ -233,4 +233,4 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
 		context.media5 = True
 		media5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part5'", as_dict=True)[0].value
-		context.medias5 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media5_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.medias5 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media5_parent+"' ORDER BY idx ASC", as_dict=True)
