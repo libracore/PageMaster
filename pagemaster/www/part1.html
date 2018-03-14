@@ -56,4 +56,12 @@
 	</div>
 	<div class="col-sm-2"></div>
 	{% endif %}
+	{% if media1 %}
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		{% set medias = medias1 %}
+		{% include "www/libra_media.html" %}
+	</div>
+	<div class="col-sm-2"></div>
+	{% endif %}
 </div>

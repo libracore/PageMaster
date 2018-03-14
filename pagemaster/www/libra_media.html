@@ -1,0 +1,25 @@
+{% for media in medias %}
+{% if media.medi_align == "Left" %}
+<!-- Left-aligned -->
+<div class="media">
+  <div class="media-left media-middle">
+    <img src="{{ media.media_img }}" alt="{{ media.title }}" class="media-object" style="width:60px">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{ media.title }}</h4>
+    <p>{{ media.subtitle }}</p>
+  </div>
+</div>
+{% elif media.medi_align == "Right" %}
+<!-- Right-aligned -->
+<div class="media">
+  <div class="media-body">
+    <h4 class="media-heading">{{ media.title }}</h4>
+    <p>{{ media.subtitle }}</p>
+  </div>
+  <div class="media-right media-middle">
+    <img src="{{ media.media_img }}" alt="{{ media.title }}" class="media-object" style="width:60px">
+  </div>
+</div>
+{% endif %}
+{% endfor %}

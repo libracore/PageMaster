@@ -42,6 +42,12 @@ def get_data():
 			   "name": "Page Card Set",
 			   "label": _("Card Sets"),
 			   "description": _("Cards Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Media Set",
+			   "label": _("Media Sets"),
+			   "description": _("Medias Setup")
 			}
 		]
 	}
