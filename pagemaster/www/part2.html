@@ -49,4 +49,19 @@
 	</div>
 	<div class="col-sm-2"></div>
 	{% endif %}
+	{% if text2 %}
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		{{ txt2 }}
+	</div>
+	<div class="col-sm-2"></div>
+	{% endif %}
+	{% if media2 %}
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		{% set medias = medias2 %}
+		{% include "www/libra_media.html" %}
+	</div>
+	<div class="col-sm-2"></div>
+	{% endif %}
 </div>

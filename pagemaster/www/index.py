@@ -88,4 +88,17 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
 		context.card2 = True
 		card2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part2'", as_dict=True)[0].value
-		context.cards2 = frappe.db.sql(" SELECT link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card2_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.cards2 = frappe.db.sql("SELECT link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card2_parent+"' ORDER BY idx ASC", as_dict=True)
+		
+	#-->Text
+	context.text2 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Text":
+		context.text2 = True
+		context.txt2 = frappe.db.sql("SELECT value FROM tabSingles WHERE doctype = 'Main Page Setup' AND field = 'txt_part2'", as_dict=True)[0].value
+		
+	#-->media
+	context.media2 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Media":
+		context.media2 = True
+		media2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part2'", as_dict=True)[0].value
+		context.medias2 = frappe.db.sql("SELECT media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media2_parent+"' ORDER BY idx ASC", as_dict=True)
