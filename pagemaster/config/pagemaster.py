@@ -16,7 +16,7 @@ def get_data():
 		]
 	},
 	{
-		"label": _("Sub Page"),
+		"label": _("Sub Pages"),
 		"icon": "fa fa-bookmark",
 		"items": [
 			{
@@ -24,6 +24,18 @@ def get_data():
 			   "name": "Page Slideshow",
 			   "label": _("Slideshow"),
 			   "description": _("Slideshows Setup")
+			}
+		]
+	},
+	{
+		"label": _("About Us"),
+		"icon": "fa fa-bookmark",
+		"items": [
+			{
+			   "type": "doctype",
+			   "name": "About Us",
+			   "label": _("About Us Settings"),
+			   "description": _("About Us Setup")
 			}
 		]
 	},
