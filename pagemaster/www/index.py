@@ -53,7 +53,7 @@ def get_context(context):
 	context.card1 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
 		context.card1 = True
-		card1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'Cards'", as_dict=True)[0].value
+		card1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part1'", as_dict=True)[0].value
 		context.cards1 = frappe.db.sql(" SELECT link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card1_parent+"'", as_dict=True)
 		
 	#Part 2
@@ -69,3 +69,10 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
 		context.slider2 = True
 		context.slideshow2 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
+		
+	#-->card
+	context.card2 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
+		context.card2 = True
+		card2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part2'", as_dict=True)[0].value
+		context.cards2 = frappe.db.sql(" SELECT link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card2_parent+"'", as_dict=True)
