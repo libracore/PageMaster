@@ -3,8 +3,24 @@
 	{% include "www/libra_navbar.html" %}
 <!-- /navbar -->
 <!-- content -->
-{{ doc }}
+	<div style="height: 53px;"></div>
+	<!-- Timeline -->
+	{% if timeline %}
 	{% include "www/libra_timeline.html" %}
+	{% endif %}
+	<!-- /timeline -->
+	<!-- cards -->
+	{% if card %}
+	<div style="height: 25px;"></div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		{% for card in cards %}
+		{% include "www/libra_card.html" %}
+		{% endfor %}
+	</div>
+	<div class="col-sm-2"></div>
+	{% endif %}
+	<!-- /card -->
 <!-- /content -->
 <!-- footer -->
 	{% include "www/libra_footer.html" %}
