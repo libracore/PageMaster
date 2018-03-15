@@ -10,6 +10,7 @@
 	{% if card1 %}
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
+		{% if card1_title %}{{ card1_title }}{% endif %}
 		{% set cards = cards1 %}
 		{% for card in cards %}
 		{% include "www/bootstrap/libra_card.html" %}
