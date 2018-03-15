@@ -34,6 +34,9 @@ $('#myCarousel.carousel .itemm').each(function(){
 	});
 	setStartHeight();
 	
+	// add newest blog to frontpage
+	$("#place_for_blog").load("/blog .web-list-item.blog-list-item:first");
+	
   });
 }(jQuery));
 
