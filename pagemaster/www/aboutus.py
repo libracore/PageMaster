@@ -18,11 +18,10 @@ def get_context(context):
 		
 	#navbar
 	#---------------------
-	context.navbar = False
-	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'incl_navbar' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "1":
-		context.navbar = True
-		context.nav_bg_color = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_bg_color' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
-		context.nav_txt_color = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_txt_color' AND doctype = 'Main Page Setup'", as_dict=True)[0].value
+	context.navbar = True
+	context.nav_bg_color = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_bg_color' AND doctype = 'Navbar'", as_dict=True)[0].value
+	context.nav_txt_color = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_txt_color' AND doctype = 'Navbar'", as_dict=True)[0].value
+	context.navlinks = frappe.db.sql("SELECT title, link FROM `tabNavbar Item` WHERE parent = 'Navbar' ORDER BY idx ASC", as_dict=True)
 	
 	#footer
 	#-------------------
