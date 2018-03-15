@@ -232,3 +232,9 @@ button.x:hover, a.x:hover {
     padding: 2px 16px;
     max-width: 500px;
 }
+.web-list-item.blog-list-item div div div {
+	display: ruby-base;
+}
+.web-list-item.blog-list-item div div div div {
+	vertical-align: baseline;
+}
