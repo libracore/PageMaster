@@ -236,5 +236,5 @@ button.x:hover, a.x:hover {
 	display: ruby-base;
 }
 .web-list-item.blog-list-item div div div div {
-	vertical-align: baseline;
+	vertical-align: baseline !important;
 }
