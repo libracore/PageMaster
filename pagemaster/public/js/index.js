@@ -28,6 +28,12 @@ $('#myCarousel.carousel .itemm').each(function(){
 			scrollFunction();
 		});
 	});
+	
+	$( window ).resize(function() {
+		setStartHeight();
+	});
+	setStartHeight();
+	
   });
 }(jQuery));
 
@@ -38,4 +44,9 @@ function scrollFunction() {
     } else {
         document.getElementById("ToTopBtn").style.display = "none";
     }
+}
+
+function setStartHeight() {
+	var navBarHeight = $('#navbar').height();
+	$(".start").css("height",(window.innerHeight-navBarHeight-30) + "px");
 }
