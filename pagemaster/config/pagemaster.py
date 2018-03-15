@@ -22,7 +22,7 @@ def get_data():
 			{
 			   "type": "doctype",
 			   "name": "Page Slideshow",
-			   "label": _("Slideshow"),
+			   "label": _("Has to be programmed!"),
 			   "description": _("Slideshows Setup")
 			}
 		]
@@ -40,7 +40,31 @@ def get_data():
 		]
 	},
 	{
-		"label": _("General Data"),
+		"label": _("General Settings"),
+		"icon": "fa fa-bookmark",
+		"items": [
+			{
+			   "type": "doctype",
+			   "name": "Navbar",
+			   "label": _("Navbar Settings"),
+			   "description": _("Navbar Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Body Settings",
+			   "label": _("Body Settings"),
+			   "description": _("Body Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "PageMaster Footer",
+			   "label": _("Footer Settings"),
+			   "description": _("Footer Setup")
+			}
+		]
+	},
+	{
+		"label": _("Bootstrap Modules"),
 		"icon": "fa fa-bookmark",
 		"items": [
 			{

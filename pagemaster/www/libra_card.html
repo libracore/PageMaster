@@ -11,6 +11,6 @@
 		{% if card.link_twitter %}<a href="{{ card.link_twitter }}" class="x"><i class="fa fa-twitter"></i></a>{% endif %}
 		{% if card.link_linkedin %}<a href="{{ card.link_linkedin }}" class="x"><i class="fa fa-linkedin"></i></a>{% endif %}
 		{% if card.link_facebook %}<a href="{{ card.link_facebook }}" class="x"><i class="fa fa-facebook"></i></a>{% endif %}
-		<p><button href="{{ card.btn_link }}" class="x">{{ card.btn_title }}</button></p>
+		{% if card.btn_title %}<p><button href="{{ card.btn_link }}" class="x">{{ card.btn_title }}</button></p>{% endif %}
 	</div>
 </div>

@@ -3,14 +3,11 @@
 		<div class="container">
 			<div class="row footer-bottom-line">
 				<div class="text-muted small col-sm-6 col-xs-12" style="color: {{ footer_txt_color }};"><br><br>
-					<div>&copy; libracore GmbH<br>
-						Bodenwis 22c<br>
-						8493 Saland<br>
-						Schweiz<br><br>
+					<div>&copy; {% if txt %}{{ txt }}{% else %}libracore GmbH{% endif %}<br><br>
 					</div>
 				</div>
 				<div class="text-muted small col-sm-6 col-xs-12 text-right footer-powered"><br><br>
-					<a href="https://www.libracore.com" target="_blank" class="text-muted" style="color: {{ footer_txt_color }};">Powered by ERPNext / libracore business software</a>					
+					<a href="{% if link %}{{ link }}{% else %}https://libracore.com{% endif %}" target="_blank" class="text-muted" style="color: {{ footer_txt_color }};">{% if link_title %}{{ link_title }}{% else %}Powered by ERPNext / libracore business software{% endif %}</a>					
 				</div>
 			</div>
 		</div>
