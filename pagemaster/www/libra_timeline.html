@@ -2,25 +2,24 @@
 
 </style>
 <div class="libratime">
-<div class="timeline">
-  <div class="container-libratime left">
-    <div class="content">
-      <h2>2017</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-  <div class="container-libratime right">
-    <div class="content">
-      <h2>2016</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-  <div class="container-libratime left">
-    <div class="content">
-      <h2>2017</h2>
-      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
-    </div>
-  </div>
-</div>
+	<div class="timeline">
+		{% for timeline in timelines %}
+		{% if timeline.align == "Left" %}
+		<div class="container-libratime left">
+			<div class="content">
+				<h2>{{ timeline.year }}</h2>
+				<p>{{ timeline.highlight }}</p>
+			</div>
+		</div>
+		{% elif timeline.align == "Right" %}
+		<div class="container-libratime right">
+			<div class="content">
+				<h2>{{ timeline.year }}</h2>
+				<p>{{ timeline.highlight }}</p>
+			</div>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
 </div>
 </body>
