@@ -1,39 +1,39 @@
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bodyimage %}background-image: url({{ bodyimagesource[0].value }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}{% if bodycolor %}background-color: {{ bodycolorcode[0].value }}{% endif %}">
 <!-- navbar -->
 	{% if navbar %}
-	{% include "www/libra_navbar.html" %}
+	{% include "www/base/libra_navbar.html" %}
 	{% endif %}
 <!-- /navbar -->
 <!-- content -->
 	<!-- part 1 -->
 		{% if parts >= 1 %}
-		{% include "www/part1.html" %}
+		{% include "www/parts/part1.html" %}
 		{% endif %}
 	<!-- /part 1 -->
 	<!-- part 2 -->
 		{% if parts >= 2 %}
-		{% include "www/part2.html" %}
+		{% include "www/parts/part2.html" %}
 		{% endif %}
 	<!-- /part 2 -->
 	<!-- part 3 -->
 		{% if parts >= 3 %}
-		{% include "www/part3.html" %}
+		{% include "www/parts/part3.html" %}
 		{% endif %}
 	<!-- /part 3 -->
 	<!-- part 4 -->
 		{% if parts >= 4 %}
-		{% include "www/part4.html" %}
+		{% include "www/parts/part4.html" %}
 		{% endif %}
 	<!-- /part 4 -->
 	<!-- part 5 -->
 		{% if parts >= 5 %}
-		{% include "www/part5.html" %}
+		{% include "www/parts/part5.html" %}
 		{% endif %}
 	<!-- /part 5 -->
 <!-- /content -->
 <!-- footer -->
 	{% if footer %}
-	{% include "www/libra_footer.html" %}
+	{% include "www/base/libra_footer.html" %}
 	{% endif %}
 <!-- /footer -->
 <!-- Scroll to top button -->

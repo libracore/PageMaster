@@ -1,18 +1,18 @@
 <div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px; {% if part4_bg %}background-color: {{ part4_bg }};{% endif %}{% if part4_height %}height: {{ part4_height }}px;{% endif %}">
 	{% if image4 %}
 		{% set imagesource = imagesource4 %}
-		{% include "www/libra_image.html" %}
+		{% include "www/bootstrap/libra_image.html" %}
 	{% endif %}
 	{% if slider4 %}
 		{% set slideshow = slideshow4 %}
-		{% include "www/libra_slider.html" %}
+		{% include "www/bootstrap/libra_slider.html" %}
 	{% endif %}
 	{% if card4 %}
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
 		{% set cards = cards4 %}
 		{% for card in cards %}
-		{% include "www/libra_card.html" %}
+		{% include "www/bootstrap/libra_card.html" %}
 		{% endfor %}
 	</div>
 	<div class="col-sm-2"></div>
@@ -28,7 +28,7 @@
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
 		{% set medias = medias4 %}
-		{% include "www/libra_media.html" %}
+		{% include "www/bootstrap/libra_media.html" %}
 	</div>
 	<div class="col-sm-2"></div>
 	{% endif %}
