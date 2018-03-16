@@ -53,8 +53,10 @@ def get_context(context):
 	context.slider1 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
 		context.slider1 = True
-		context.slideshow1 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
-		
+		slider1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'slider_part1'", as_dict=True)[0].value
+		context.slider_intro1 = frappe.db.sql("SELECT slider_intro FROM `tabPage Slideshow` WHERE title = '"+slider1_parent+"'", as_dict=True)[0].slider_intro
+		context.sliders1 = frappe.db.sql("SELECT slider_img, img_alt FROM `tabPage Slider` WHERE parent = '"+slider1_parent+"' ORDER BY idx ASC", as_dict=True)
+	
 	#-->card
 	context.card1 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
@@ -94,7 +96,9 @@ def get_context(context):
 	context.slider2 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
 		context.slider2 = True
-		context.slideshow2 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
+		slider2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'slider_part2'", as_dict=True)[0].value
+		context.slider_intro2 = frappe.db.sql("SELECT slider_intro FROM `tabPage Slideshow` WHERE title = '"+slider2_parent+"'", as_dict=True)[0].slider_intro
+		context.sliders2 = frappe.db.sql("SELECT slider_img, img_alt FROM `tabPage Slider` WHERE parent = '"+slider2_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->card
 	context.card2 = False
@@ -135,7 +139,9 @@ def get_context(context):
 	context.slider3 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
 		context.slider3 = True
-		context.slideshow3 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
+		slider3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'slider_part3'", as_dict=True)[0].value
+		context.slider_intro3 = frappe.db.sql("SELECT slider_intro FROM `tabPage Slideshow` WHERE title = '"+slider3_parent+"'", as_dict=True)[0].slider_intro
+		context.sliders3 = frappe.db.sql("SELECT slider_img, img_alt FROM `tabPage Slider` WHERE parent = '"+slider3_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->card
 	context.card3 = False
@@ -176,7 +182,9 @@ def get_context(context):
 	context.slider4 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
 		context.slider4 = True
-		context.slideshow4 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
+		slider4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'slider_part4'", as_dict=True)[0].value
+		context.slider_intro4 = frappe.db.sql("SELECT slider_intro FROM `tabPage Slideshow` WHERE title = '"+slider4_parent+"'", as_dict=True)[0].slider_intro
+		context.sliders4 = frappe.db.sql("SELECT slider_img, img_alt FROM `tabPage Slider` WHERE parent = '"+slider4_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->card
 	context.card4 = False
@@ -217,7 +225,9 @@ def get_context(context):
 	context.slider5 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Slideshow":
 		context.slider5 = True
-		context.slideshow5 = frappe.db.sql("SELECT parent,idx,slider_img,img_alt FROM `tabPage Slider`", as_dict=True)
+		slider5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'slider_part5'", as_dict=True)[0].value
+		context.slider_intro5 = frappe.db.sql("SELECT slider_intro FROM `tabPage Slideshow` WHERE title = '"+slider5_parent+"'", as_dict=True)[0].slider_intro
+		context.sliders5 = frappe.db.sql("SELECT slider_img, img_alt FROM `tabPage Slider` WHERE parent = '"+slider5_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->card
 	context.card5 = False

@@ -37,6 +37,19 @@ $('#myCarousel.carousel .itemm').each(function(){
 	// add newest blog to frontpage
 	$("#place_for_blog").load("/blog .web-list-item.blog-list-item:first");
 	
+	
+	// Add smooth scrolling to all links in navbar + footer link
+	$("#ToTopBtn").on('click', function(event) {
+		// Using jQuery's animate() method to add smooth page scroll
+		// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+		$('html, body').animate({
+			scrollTop: 0
+		}, 900, function() {
+			// Add hash (#) to URL when done scrolling (default click behavior)
+			//window.location.hash = "#home";
+		});
+	});
+	
   });
 }(jQuery));
 
