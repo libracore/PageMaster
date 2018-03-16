@@ -38,6 +38,7 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'incl_timeline' AND doctype = 'About Us'", as_dict=True)[0].value == "1":
 		context.timeline = True
 		timeline_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'About Us' AND field = 'timeline'", as_dict=True)[0].value
+		context.timeline_intro = frappe.db.sql("SELECT timeline_intro FROM `tabTimeline Set` WHERE title = '"+timeline_parent+"'", as_dict=True)[0].timeline_intro
 		context.timelines = frappe.db.sql("SELECT year, highlight, align FROM `tabTimeline` WHERE parent = '"+timeline_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#cards
