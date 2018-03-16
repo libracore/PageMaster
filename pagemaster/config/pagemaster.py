@@ -4,15 +4,21 @@ from frappe import _
 def get_data():
     return[
 	{
-		"label": _("Main Page"),
+		"label": _("Main Pages"),
 		"icon": "fa fa-bookmark",
 		"items": [
 		   {
 			   "type": "doctype",
 			   "name": "Main Page Setup",
-			   "label": _("Setup"),
+			   "label": _("Main Page"),
 			   "description": _("Setup Tools for the Main Page")
-		   }
+		   },
+		   {
+			   "type": "doctype",
+			   "name": "About Us",
+			   "label": _("About Us"),
+			   "description": _("About Us Setup")
+			}
 		]
 	},
 	{
@@ -24,42 +30,6 @@ def get_data():
 			   "name": "Page Slideshow",
 			   "label": _("Has to be programmed!"),
 			   "description": _("Slideshows Setup")
-			}
-		]
-	},
-	{
-		"label": _("About Us"),
-		"icon": "fa fa-bookmark",
-		"items": [
-			{
-			   "type": "doctype",
-			   "name": "About Us",
-			   "label": _("Setup"),
-			   "description": _("About Us Setup")
-			}
-		]
-	},
-	{
-		"label": _("General Settings"),
-		"icon": "fa fa-bookmark",
-		"items": [
-			{
-			   "type": "doctype",
-			   "name": "Navbar",
-			   "label": _("Navbar Settings"),
-			   "description": _("Navbar Setup")
-			},
-			{
-			   "type": "doctype",
-			   "name": "Body Settings",
-			   "label": _("Body Settings"),
-			   "description": _("Body Setup")
-			},
-			{
-			   "type": "doctype",
-			   "name": "PageMaster Footer",
-			   "label": _("Footer Settings"),
-			   "description": _("Footer Setup")
 			}
 		]
 	},
@@ -92,5 +62,29 @@ def get_data():
 			   "description": _("Timeline Setup")
 			}
 		]
-	}
+	},
+	{
+		"label": _("General Settings"),
+		"icon": "fa fa-bookmark",
+		"items": [
+			{
+			   "type": "doctype",
+			   "name": "Navbar",
+			   "label": _("Navbar Settings"),
+			   "description": _("Navbar Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Body Settings",
+			   "label": _("Body Settings"),
+			   "description": _("Body Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "PageMaster Footer",
+			   "label": _("Footer Settings"),
+			   "description": _("Footer Setup")
+			}
+		]
+	},
 ]
