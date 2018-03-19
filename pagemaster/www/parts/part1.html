@@ -12,7 +12,7 @@
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
 		{% if card1_title %}{{ card1_title }}{% endif %}
-		{% set cards = cards1 %}
+		{% set cards = cards1 %}{% set card_bg = card1_bg_color %}{% set btn_bg = card1_btn_bg_color %}
 		{% for card in cards %}
 		{% include "www/bootstrap/libra_card.html" %}
 		{% endfor %}
@@ -28,7 +28,7 @@
 	{% endif %}
 	{% if media1 %}
 	<div class="col-sm-2"></div>
-	<div class="col-sm-8">
+	<div class="col-sm-8"{% if media1_bg_color %} style="background-color: {{ media1_bg_color }};"{% endif %}>
 		{{ media_title1 }}
 		{% set medias = medias1 %}
 		{% include "www/bootstrap/libra_media.html" %}

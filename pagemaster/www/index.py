@@ -63,6 +63,8 @@ def get_context(context):
 		context.card1 = True
 		card1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part1'", as_dict=True)[0].value
 		context.card1_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].card_intro
+		context.card1_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].card_bg_color
+		context.card1_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards1 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card1_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->Text
@@ -77,6 +79,7 @@ def get_context(context):
 		context.media1 = True
 		media1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part1'", as_dict=True)[0].value
 		context.media_title1 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media1_parent+"'", as_dict=True)[0].media_intro
+		context.media1_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media1_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias1 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media1_parent+"' ORDER BY idx ASC", as_dict=True)
 	
 	#Part 2
@@ -107,6 +110,8 @@ def get_context(context):
 		context.card2 = True
 		card2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part2'", as_dict=True)[0].value
 		context.card2_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].card_intro
+		context.card2_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].card_bg_color
+		context.card2_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards2 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card2_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->Text
@@ -121,6 +126,7 @@ def get_context(context):
 		context.media2 = True
 		media2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part2'", as_dict=True)[0].value
 		context.media_title2 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media2_parent+"'", as_dict=True)[0].media_intro
+		context.media2_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media2_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias2 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media2_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 3
@@ -151,6 +157,8 @@ def get_context(context):
 		context.card3 = True
 		card3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part3'", as_dict=True)[0].value
 		context.card3_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].card_intro
+		context.card3_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].card_bg_color
+		context.card3_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards3 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card3_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->Text
@@ -165,6 +173,7 @@ def get_context(context):
 		context.media3 = True
 		media3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part3'", as_dict=True)[0].value
 		context.media_title3 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media3_parent+"'", as_dict=True)[0].media_intro
+		context.media3_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media3_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias3 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media3_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 4
@@ -195,6 +204,8 @@ def get_context(context):
 		context.card4 = True
 		card4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part4'", as_dict=True)[0].value
 		context.card4_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].card_intro
+		context.card4_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].card_bg_color
+		context.card4_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards4 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card4_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->Text
@@ -209,6 +220,7 @@ def get_context(context):
 		context.media4 = True
 		media4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part4'", as_dict=True)[0].value
 		context.media_title4 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media_title4+"'", as_dict=True)[0].media_intro
+		context.media4_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media4_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias4 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media4_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 5
@@ -239,6 +251,8 @@ def get_context(context):
 		context.card5 = True
 		card5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part5'", as_dict=True)[0].value
 		context.card5_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].card_intro
+		context.card5_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].card_bg_color
+		context.card5_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards5 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card5_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#-->Text
@@ -253,4 +267,5 @@ def get_context(context):
 		context.media5 = True
 		media5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'media_part5'", as_dict=True)[0].value
 		context.media_title5 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media5_parent+"'", as_dict=True)[0].media_intro
+		context.media5_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media5_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias5 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media5_parent+"' ORDER BY idx ASC", as_dict=True)

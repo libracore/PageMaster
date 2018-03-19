@@ -1,5 +1,5 @@
 <div class="col-md-3 col-sm-4">
-	<div class="card x">
+	<div class="card x"{% if card_bg %} style="background-color: {{ card_bg }};"{% endif %}>
 		{% if card.img_or_fa == "Image" %}
 		<img src="{{ card.card_img }}" alt="{{ card.title }}" style="width:100%;">
 		{% elif card.img_or_fa == "Fontawesome" %}
@@ -11,6 +11,6 @@
 		{% if card.link_twitter %}<a href="{{ card.link_twitter }}" class="x"><i class="fa fa-twitter"></i></a>{% endif %}
 		{% if card.link_linkedin %}<a href="{{ card.link_linkedin }}" class="x"><i class="fa fa-linkedin"></i></a>{% endif %}
 		{% if card.link_facebook %}<a href="{{ card.link_facebook }}" class="x"><i class="fa fa-facebook"></i></a>{% endif %}
-		{% if card.btn_title %}<p><button href="{{ card.btn_link }}" class="x">{{ card.btn_title }}</button></p>{% endif %}
+		{% if card.btn_title %}<p><button href="{{ card.btn_link }}" class="x"{% if btn_bg %} style="background-color: {{ btn_bg }};"{% endif %}>{{ card.btn_title }}</button></p>{% endif %}
 	</div>
 </div>

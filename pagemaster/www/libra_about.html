@@ -17,6 +17,7 @@
 	<div style="height: 25px;"></div>
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
+		{% set card_bg = card_bg_color %}{% set btn_bg = card_btn_bg_color %}
 		{% for card in cards %}
 		{% include "www/bootstrap/libra_card.html" %}
 		{% endfor %}

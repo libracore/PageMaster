@@ -47,6 +47,9 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'incl_cards' AND doctype = 'About Us'", as_dict=True)[0].value == "1":
 		context.card = True
 		card_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'About Us' AND field = 'cards'", as_dict=True)[0].value
+		context.card_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card_parent+"'", as_dict=True)[0].card_intro
+		context.card_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card_parent+"'", as_dict=True)[0].card_bg_color
+		context.card_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#introduction
