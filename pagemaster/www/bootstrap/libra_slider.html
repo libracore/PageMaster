@@ -31,12 +31,18 @@
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
 				<img class="img slider" src="{{ slideshow[0].slider_img }}" alt="{{ slideshow[0].img_alt }}">
-				<div class="carousel-caption"{% if slider_desc_below == 1 %} style="position: initial;"{% endif %}>{{ slideshow[0].img_alt }}</div>
+				<div class="carousel-caption"{% if slider_desc_below == 1 %} style="position: initial;"{% endif %}>
+					{{ slideshow[0].img_title }}<br>
+					{{ slideshow[0].img_description }}
+				</div>
 			</div>
 			{% for slider in slideshow %} {% if loop.index >= 2 %}
 			<div class="item">
 				<img class="img slider" src="{{ slider.slider_img }}" alt="{{ slider.img_alt }}">
-				<div class="carousel-caption"{% if slider_desc_below == 1 %} style="position: initial;"{% endif %}>{{ slider.img_alt }}</div>
+				<div class="carousel-caption"{% if slider_desc_below == 1 %} style="position: initial;"{% endif %}>
+					{{ slider.img_alt }}<br>
+					{{ slider.img_description }}
+				</div>
 			</div>
 			{% endif %}{% endfor %}
 		</div>
