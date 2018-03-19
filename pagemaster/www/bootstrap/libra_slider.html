@@ -1,27 +1,42 @@
-{% if slider_intro %}
-<div class="col-sm-2"></div>
-<div class="col-sm-8">
-	{{ slider_intro }}
-</div>
-<div class="col-sm-2"></div>
+{% if indicator_show == 1 %}
+	{% set indicator_show = True %}
+{% elif indicator_show == 0 %}
+	{% set indicator_show = False %}
 {% endif %}
-<div class="col-xs-12">
-	<div style="max-width:100%;" id="carousel-example-generic" class="carousel slide " data-ride="carousel">
+{% if slider_desc_below == 1 %}
+	{% set indicator_show = False %}
+{% endif %}
+{% if left %}
+<div class="col-sm-{{ left }}"></div>
+<div class="col-sm-{{ middle }}">
+{% elif right %}
+<div class="col-sm-{{ middle }}">
+{% else %}
+<div class="col-sm-12">
+{% endif %}
+	{% if slider_intro %}
+		{{ slider_intro }}
+	{% endif %}
+	<div{% if slider_width %} style="max-width: {{ slider_width }};"{% endif %} id="carousel-example-generic" class="carousel slide " data-ride="carousel">
+		{% if indicator_show %}
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			{% for slider in slideshow %} {% if loop.index >= 2 %}
+			<li data-target="#carousel-example-generic" data-slide-to="{{ loop.index }}"></li>
+			{% endif %}{% endfor %}
 		</ol>
+		{% endif %}
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
 				<img class="img main"  src="{{ slideshow[0].slider_img }}" alt="{{ slideshow[0].img_alt }}">
-				<div class="carousel-caption">{{ slideshow[0].img_alt }}</div>
+				<div class="carousel-caption"{% if slider_desc_below == 1 %} style="position: initial;"{% endif %}>{{ slideshow[0].img_alt }}</div>
 			</div>
 			{% for slider in slideshow %} {% if loop.index >= 2 %}
 			<div class="item">
 				<img class="img main"  src="{{ slider.slider_img }}" alt="{{ slider.img_alt }}">
-				<div class="carousel-caption">{{ slider.img_alt }}</div>
+				<div class="carousel-caption"{% if slider_desc_below == 1 %} style="position: initial;"{% endif %}>{{ slider.img_alt }}</div>
 			</div>
 			{% endif %}{% endfor %}
 		</div>
@@ -35,4 +50,13 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
+{% if right %}
+{% if right > 0 %}
 </div>
+<div class="col-sm-{{ right }}"></div>
+{% else %}
+</div>
+{% endif %}
+{% else %}
+</div>
+{% endif %}

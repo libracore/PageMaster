@@ -6,6 +6,17 @@
 	{% if slider2 %}
 		{% set slideshow = sliders2 %}
 		{% set slider_intro = slider_intro2 %}
+		{% set indicator_show = slider2_indicator_show %}
+		{% set slider_desc_below = slider2_desc_below %}
+		{% set slider_width = slider2_width %}
+		{% if slider2_left %}
+			{% set left = slider2_left %}
+			{% set middle = slider2_middle %}
+			{% set right = slider2_right %}
+		{% elif slider2_right %}
+			{% set middle = slider2_middle %}
+			{% set right = slider2_right %}
+		{% endif %}
 		{% include "www/bootstrap/libra_slider.html" %}
 	{% endif %}
 	{% if card2 %}
