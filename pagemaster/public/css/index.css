@@ -9,6 +9,12 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+.img.slider {
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 .bg {
     height: 100%;
 	background-position: center;
