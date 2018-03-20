@@ -42,4 +42,6 @@ def get_context(context):
 	context.categories = frappe.get_all('Blog Category', filters={'published': '1'}, fields=['title'])
 	
 	#blog posts
-	context.posts = frappe.get_all('Blog Post', filters={'published': '1'}, fields=['title', 'blog_category', 'blogger', 'published_on', 'blog_intro'])
+	#context.posts = frappe.get_all('Blog Post', filters={'published': '1'}, fields=['title', 'blog_category', 'blogger', 'published_on', 'blog_intro'])
+	context.posts = frappe.get_list('Blog Post', fields=['title', 'blog_category', 'blogger', 'published_on', 'blog_intro'], filters={'published': '1'}, order_by='published_on', limit_page_length=None, ignore_permissions=True)
+	#context.older_posts = frappe.get_list('Blog Post', fields=['title', 'blog_category', 'blogger', 'published_on', 'blog_intro'], filters={'published': '1'}, order_by='published_on', limit_start=3, ignore_permissions=True)

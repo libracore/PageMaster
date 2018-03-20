@@ -40,6 +40,30 @@ def get_data():
 		]
 	},
 	{
+		"label": _("News / Blog"),
+		"icon": "fa fa-bookmark",
+		"items": [
+			{
+			   "type": "doctype",
+			   "name": "Blog Post",
+			   "label": _("Posts"),
+			   "description": _("News / Blog Post")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Blog Settings",
+			   "label": _("Settings"),
+			   "description": _("News / Blog Settings")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Blog Category",
+			   "label": _("Categories"),
+			   "description": _("News / Blog Categories")
+			}
+		]
+	},
+	{
 		"label": _("Bootstrap Modules"),
 		"icon": "fa fa-bookmark",
 		"items": [
