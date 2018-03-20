@@ -197,7 +197,14 @@ div.libratime .content {
 .title.x {
 	color: grey;
 	font-size: 18px;
+	padding-left: 3px;
 }
+.libra-wrap {
+	white-space: pre;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
 button.x {
 	border: none;
 	outline: 0;

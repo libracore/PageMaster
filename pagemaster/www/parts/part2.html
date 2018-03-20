@@ -24,7 +24,12 @@
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
 		{% if card2_title %}{{ card2_title }}{% endif %}
-		{% set cards = cards2 %}{% set card_bg = card2_bg_color %}{% set btn_bg = card2_btn_bg_color %}
+		{% set cards = cards2 %}
+		{% set card_bg = card2_bg_color %}
+		{% set btn_bg = card2_btn_bg_color %}
+		{% set mob_qty = card2_mob_qty %}
+		{% set tablet_qty = card2_tablet_qty %}
+		{% set desktop_qty = card2_desktop_qty %}
 		{% for card in cards %}
 		{% include "www/bootstrap/libra_card.html" %}
 		{% endfor %}

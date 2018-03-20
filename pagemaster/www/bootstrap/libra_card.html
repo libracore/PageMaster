@@ -1,13 +1,13 @@
-<div class="col-md-3 col-sm-4">
+<div class="col-md-{{ desktop_qty }} col-sm-{{ tablet_qty }} col-xs-{{ mob_qty }}">
 	<div class="card x"{% if card_bg %} style="background-color: {{ card_bg }};"{% endif %}>
 		{% if card.img_or_fa == "Image" %}
 		<img src="{{ card.card_img }}" alt="{{ card.title }}" style="width:100%;">
 		{% elif card.img_or_fa == "Fontawesome" %}
 		<i class="{{ card.card_fa }}" style="font-size: {{ card.card_fa_size }};"></i>
 		{% endif %}
-		<h1>{{ card.title }}</h1>
-		<p class="title x">{{ card.subtitle_1 }}</p>
-		{% if card.subtitle_2 %}<p>{{ card.subtitle_2 }}</p>{% endif %}
+		<h1 class="libra-wrap">{{ card.title }}</h1>
+		<p class="title x libra-wrap">{{ card.subtitle_1 }}</p>
+		{% if card.subtitle_2 %}<p class="libra-wrap">{{ card.subtitle_2 }}</p>{% endif %}
 		{% if card.link_twitter %}<a href="{{ card.link_twitter }}" class="x"><i class="fa fa-twitter"></i></a>{% endif %}
 		{% if card.link_linkedin %}<a href="{{ card.link_linkedin }}" class="x"><i class="fa fa-linkedin"></i></a>{% endif %}
 		{% if card.link_facebook %}<a href="{{ card.link_facebook }}" class="x"><i class="fa fa-facebook"></i></a>{% endif %}

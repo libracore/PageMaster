@@ -71,6 +71,12 @@ def get_context(context):
 		context.card1 = True
 		card1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part1'", as_dict=True)[0].value
 		context.card1_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].card_intro
+		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].mob_qty)
+		context.card1_mob_qty = 12 / mobile_qty
+		tablet_qty = int(frappe.db.sql("SELECT tablet_qty FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].tablet_qty)
+		context.card1_tablet_qty = 12 / tablet_qty
+		desktop_qty = int(frappe.db.sql("SELECT desktop_qty FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].desktop_qty)
+		context.card1_desktop_qty = 12 / desktop_qty
 		context.card1_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].card_bg_color
 		context.card1_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards1 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card1_parent+"' ORDER BY idx ASC", as_dict=True)
@@ -126,6 +132,12 @@ def get_context(context):
 		context.card2 = True
 		card2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part2'", as_dict=True)[0].value
 		context.card2_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].card_intro
+		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].mob_qty)
+		context.card2_mob_qty = 12 / mobile_qty
+		tablet_qty = int(frappe.db.sql("SELECT tablet_qty FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].tablet_qty)
+		context.card2_tablet_qty = 12 / tablet_qty
+		desktop_qty = int(frappe.db.sql("SELECT desktop_qty FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].desktop_qty)
+		context.card2_desktop_qty = 12 / desktop_qty
 		context.card2_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].card_bg_color
 		context.card2_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards2 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card2_parent+"' ORDER BY idx ASC", as_dict=True)
@@ -181,6 +193,12 @@ def get_context(context):
 		context.card3 = True
 		card3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part3'", as_dict=True)[0].value
 		context.card3_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].card_intro
+		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].mob_qty)
+		context.card3_mob_qty = 12 / mobile_qty
+		tablet_qty = int(frappe.db.sql("SELECT tablet_qty FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].tablet_qty)
+		context.card3_tablet_qty = 12 / tablet_qty
+		desktop_qty = int(frappe.db.sql("SELECT desktop_qty FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].desktop_qty)
+		context.card3_desktop_qty = 12 / desktop_qty
 		context.card3_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].card_bg_color
 		context.card3_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards3 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card3_parent+"' ORDER BY idx ASC", as_dict=True)
@@ -236,6 +254,12 @@ def get_context(context):
 		context.card4 = True
 		card4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part4'", as_dict=True)[0].value
 		context.card4_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].card_intro
+		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].mob_qty)
+		context.card4_mob_qty = 12 / mobile_qty
+		tablet_qty = int(frappe.db.sql("SELECT tablet_qty FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].tablet_qty)
+		context.card4_tablet_qty = 12 / tablet_qty
+		desktop_qty = int(frappe.db.sql("SELECT desktop_qty FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].desktop_qty)
+		context.card4_desktop_qty = 12 / desktop_qty
 		context.card4_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].card_bg_color
 		context.card4_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards4 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card4_parent+"' ORDER BY idx ASC", as_dict=True)
@@ -291,6 +315,12 @@ def get_context(context):
 		context.card5 = True
 		card5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part5'", as_dict=True)[0].value
 		context.card5_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].card_intro
+		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].mob_qty)
+		context.card5_mob_qty = 12 / mobile_qty
+		tablet_qty = int(frappe.db.sql("SELECT tablet_qty FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].tablet_qty)
+		context.card5_tablet_qty = 12 / tablet_qty
+		desktop_qty = int(frappe.db.sql("SELECT desktop_qty FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].desktop_qty)
+		context.card5_desktop_qty = 12 / desktop_qty
 		context.card5_bg_color = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].card_bg_color
 		context.card5_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards5 = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card5_parent+"' ORDER BY idx ASC", as_dict=True)
