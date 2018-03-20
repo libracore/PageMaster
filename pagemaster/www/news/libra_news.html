@@ -1,0 +1,94 @@
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bodyimage %}background-image: url({{ bodyimagesource[0].value }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}{% if bodycolor %}background-color: {{ bodycolorcode[0].value }}{% endif %}">
+<!-- navbar -->
+	{% include "www/base/libra_navbar.html" %}
+<!-- /navbar -->
+<div class="container" style="margin-top: 60px;">
+	<div class="row">
+		<!-- Blog Entries Column -->
+		<div class="col-md-8">
+			<h1 class="page-header">{{ blog_title }}</h1>
+			{% for post in posts %}
+			<!-- Blog Post -->
+			<h2>
+				<a href="#">{{ post.title }}</a><br><small> by <a href="index.php">{{ post.blogger }}</a></small>
+			</h2>
+			<p><span class="glyphicon glyphicon-time"></span> {{ post.published_on }}</p>
+			<hr>
+			<img class="img-responsive" src="http://placehold.it/900x300" alt="">
+			<hr>
+			<p>{{ post.blog_intro }}</p>
+			<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+			<hr>
+			<!-- /Blog Post -->
+			{% endfor %}
+			<!-- Pager -->
+			<ul class="pager">
+				<li class="previous">
+					<a href="#">&larr; Older</a>
+				</li>
+				<li class="next">
+					<a href="#">Newer &rarr;</a>
+				</li>
+			</ul>
+			<!-- /Pager -->
+		</div>
+		<!-- Blog Sidebar Widgets Column -->
+		<div class="col-md-4">
+			<!-- Blog Search Well -->
+			<div class="well">
+				<h4>Blog Search</h4>
+				<div class="input-group">
+					<input type="text" class="form-control">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">
+							<span class="glyphicon glyphicon-search"></span>
+					</button>
+					</span>
+				</div>
+				<!-- /.input-group -->
+			</div>
+			<!-- Blog Categories Well -->
+			<div class="well">
+				<h4>Blog Categories</h4>
+				<div class="row">
+					<div class="col-lg-6">
+						<ul class="list-unstyled">
+							<li><a href="#">{{ categories[0].title }}</a>
+							</li>
+							{% for category in categories %}
+							{% if loop.index >= 2 %}
+							<li><a href="#">{{ category.title }}</a>
+							</li>
+							{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+				<!-- /.row -->
+			</div>
+		</div>
+	</div>
+	<!-- /.row -->
+</div>
+<!-- footer -->
+	{% include "www/base/libra_footer.html" %}
+<!-- /footer -->
+<!-- Scroll to top button -->
+	<button class="btn" id="ToTopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button> 
+	<script>
+		$(document).ready(function() {
+			// Add smooth scrolling to all links in navbar + footer link
+			$("#ToTopBtn").on('click', function(event) {
+				// Using jQuery's animate() method to add smooth page scroll
+				// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+				$('html, body').animate({
+					scrollTop: 0
+				}, 900, function() {
+					// Add hash (#) to URL when done scrolling (default click behavior)
+					//window.location.hash = "#home";
+				});
+			});
+		})
+	</script>
+	<!-- csrf_token -->
+</body>
