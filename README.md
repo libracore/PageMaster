@@ -9,7 +9,7 @@ Easy way to create:
 * Landing page
 * About-Us page
 * Product page (in development)
-* Contact page (in development)
+* Contact page
 
 With the well-known modules of bootstrap like:
 * Slideshows
