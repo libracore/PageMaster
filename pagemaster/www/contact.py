@@ -31,3 +31,14 @@ def get_context(context):
 	context.txt = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'txt' AND doctype = 'PageMaster Footer'", as_dict=True)[0].value
 	context.link_title = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'link_title' AND doctype = 'PageMaster Footer'", as_dict=True)[0].value
 	context.link = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'link' AND doctype = 'PageMaster Footer'", as_dict=True)[0].value
+	
+	#google place id
+	context.google_place_id = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'google_place_id' AND doctype = 'PageMaster Contact'", as_dict=True)[0].value
+	#info mail
+	context.info_mail = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'info_mail' AND doctype = 'PageMaster Contact'", as_dict=True)[0].value
+	#website link
+	context.website_link = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'website_link' AND doctype = 'PageMaster Contact'", as_dict=True)[0].value
+	#phone number
+	context.phone_number = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'phone_number' AND doctype = 'PageMaster Contact'", as_dict=True)[0].value
+	#info address
+	context.info_address = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'info_address' AND doctype = 'PageMaster Contact'", as_dict=True)[0].value

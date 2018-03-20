@@ -18,6 +18,12 @@ def get_data():
 			   "name": "About Us",
 			   "label": _("About Us"),
 			   "description": _("About Us Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "PageMaster Contact",
+			   "label": _("Contact"),
+			   "description": _("Contact Setup")
 			}
 		]
 	},

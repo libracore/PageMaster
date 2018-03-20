@@ -9,7 +9,7 @@
 			<hr>
 			<div class="col-sm-12" id="parent">
 				<div class="col-sm-6">
-					<iframe width="100%" height="320px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJr6QVu_PHmkcRYmW_XWGpzd8&key=AIzaSyBh28pkiYa8hwY5iHfbwAbJLDpUHliwIjY" allowfullscreen></iframe>
+					<iframe width="100%" height="320px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:{% if google_place_id %}{{ google_place_id }}{% else %}ChIJr6QVu_PHmkcRYmW_XWGpzd8{% endif %}&key=AIzaSyBh28pkiYa8hwY5iHfbwAbJLDpUHliwIjY" allowfullscreen></iframe>
 				</div>
 				<div class="col-sm-6">
 					<form action="form.php" class="contact-form" method="post">
@@ -41,9 +41,9 @@
 							<div class="info">
 								<h3 class="title">MAIL & WEBSITE</h3>
 								<p>
-									<i class="fa fa-envelope" aria-hidden="true"></i> &nbsp info@libracore.com
+									<i class="fa fa-envelope" aria-hidden="true"></i> &nbsp {% if info_mail %}<a href="mailto:{{ info_mail }}?Subject=Contact" target="_top">{{ info_mail }}</a>{% else %}<a href="mailto:info@libracore.com?Subject=Contact" target="_top">info@libracore.com</a>{% endif %}
 									<br>
-									<i class="fa fa-globe" aria-hidden="true"></i> &nbsp https://libracore.com
+									<i class="fa fa-globe" aria-hidden="true"></i> &nbsp {% if website_link %}{{ website_link }}{% else %}https://libracore.com{% endif %}
 								</p>
 							</div>
 						</div>
@@ -57,7 +57,7 @@
 							<div class="info">
 								<h3 class="title">CONTACT</h3>
 								<p>
-									<i class="fa fa-mobile" aria-hidden="true"></i> &nbsp (+41) 52 544 17 62
+									<i class="fa fa-mobile" aria-hidden="true"></i> &nbsp {% if phone_number %}{{ phone_number }}{% else %}(+41) 52 544 17 62{% endif %}
 								</p>
 							</div>
 						</div>
@@ -71,7 +71,7 @@
 							<div class="info">
 								<h3 class="title">ADDRESS</h3>
 								<p>
-									<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp Jonastrasse 7<br>8636 Wald ZH<br>Schweiz
+									<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp {% if info_address %}{{ info_address }}{% else %}Jonastrasse 7<br>8636 Wald ZH<br>Schweiz{% endif %}
 								</p>
 							</div>
 						</div>
