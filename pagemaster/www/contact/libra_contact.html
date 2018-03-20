@@ -12,22 +12,24 @@
 					<iframe width="100%" height="320px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:{% if google_place_id %}{{ google_place_id }}{% else %}ChIJr6QVu_PHmkcRYmW_XWGpzd8{% endif %}&key=AIzaSyBh28pkiYa8hwY5iHfbwAbJLDpUHliwIjY" allowfullscreen></iframe>
 				</div>
 				<div class="col-sm-6">
-					<form action="form.php" class="contact-form" method="post">
+					<!--<form action="form.php" class="contact-form" method="post">-->
+						<p id="contact-alert" class="alert alert-warning"
+							style="display: none;">&nbsp;</p>
 						<div class="form-group">
-							<input type="text" class="form-control contact" id="name" name="nm" placeholder="Name" required="" autofocus="">
+							<input type="text" class="form-control contact" id="name" name="contact_name" placeholder="Name" required="" autofocus="">
 						</div>
 						<div class="form-group form_left">
-							<input type="email" class="form-control contact" id="email" name="em" placeholder="Email" required="">
+							<input type="email" class="form-control contact" id="email" name="email" placeholder="Email" required="">
 						</div>
 						<div class="form-group">
-						   <input type="text" class="form-control contact" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No." required="">
+						   <input type="text" class="form-control contact" id="phone" name="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No." required="">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control contact textarea-contact" rows="5" id="comment" name="FB" placeholder="Type Your Message/Feedback here..." required=""></textarea>
+							<textarea class="form-control contact textarea-contact" rows="5" id="comment" name="message" placeholder="Type Your Message/Feedback here..." required=""></textarea>
 							<br>
 							<button class="btn btn-default btn-send contact"> <span class="glyphicon glyphicon-send"></span> Send </button>
 						</div>
-					</form>
+					<!--</form>-->
 				</div>
 			</div>
 		</div>
@@ -81,6 +83,9 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		{% include "www/contact/contact.js" %}
+	</script>
 <!-- /content -->
 <!-- footer -->
 	{% include "www/base/libra_footer.html" %}
@@ -102,4 +107,5 @@
 			});
 		})
 	</script>
+	<!-- csrf_token -->
 </body>
