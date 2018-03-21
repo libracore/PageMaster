@@ -67,12 +67,12 @@ def get_context(context):
 	
 	#-->card
 	context.card1 = False
-	context.incl_modal = False
+	context.incl_modal1 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
 		context.card1 = True
 		card1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part1'", as_dict=True)[0].value
 		if int(frappe.db.sql("SELECT incl_modal FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].incl_modal) == 1:
-			context.incl_modal = True
+			context.incl_modal1 = True
 		context.card1_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].card_intro
 		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].mob_qty)
 		context.card1_mob_qty = 12 / mobile_qty
@@ -131,9 +131,12 @@ def get_context(context):
 		
 	#-->card
 	context.card2 = False
+	context.incl_modal2 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
 		context.card2 = True
 		card2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part2'", as_dict=True)[0].value
+		if int(frappe.db.sql("SELECT incl_modal FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].incl_modal) == 1:
+			context.incl_modal2 = True
 		context.card2_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].card_intro
 		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card2_parent+"'", as_dict=True)[0].mob_qty)
 		context.card2_mob_qty = 12 / mobile_qty
@@ -192,9 +195,12 @@ def get_context(context):
 		
 	#-->card
 	context.card3 = False
+	context.incl_modal3 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
 		context.card3 = True
 		card3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part3'", as_dict=True)[0].value
+		if int(frappe.db.sql("SELECT incl_modal FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].incl_modal) == 1:
+			context.incl_modal3 = True
 		context.card3_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].card_intro
 		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card3_parent+"'", as_dict=True)[0].mob_qty)
 		context.card3_mob_qty = 12 / mobile_qty
@@ -253,9 +259,12 @@ def get_context(context):
 		
 	#-->card
 	context.card4 = False
+	context.incl_modal4 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
 		context.card4 = True
 		card4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part4'", as_dict=True)[0].value
+		if int(frappe.db.sql("SELECT incl_modal FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].incl_modal) == 1:
+			context.incl_modal4 = True
 		context.card4_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].card_intro
 		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card4_parent+"'", as_dict=True)[0].mob_qty)
 		context.card4_mob_qty = 12 / mobile_qty
@@ -314,9 +323,12 @@ def get_context(context):
 		
 	#-->card
 	context.card5 = False
+	context.incl_modal5 = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
 		context.card5 = True
 		card5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part5'", as_dict=True)[0].value
+		if int(frappe.db.sql("SELECT incl_modal FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].incl_modal) == 1:
+			context.incl_modal5 = True
 		context.card5_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].card_intro
 		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card5_parent+"'", as_dict=True)[0].mob_qty)
 		context.card5_mob_qty = 12 / mobile_qty
