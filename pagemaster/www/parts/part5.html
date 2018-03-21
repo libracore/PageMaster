@@ -56,6 +56,7 @@
 	{% if box5 %}
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
+	{% if box_header5 %}{{ box_header5 }}{% endif %}
 	{% for box in boxes5 %}
 	{% include "www/bootstrap/libra_box.html" %}
 	{% endfor %}

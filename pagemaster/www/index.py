@@ -105,6 +105,7 @@ def get_context(context):
 		context.box1 = True
 		box1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part1'", as_dict=True)[0].value
 		context.boxes1 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box1_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.box_header1 = frappe.db.sql("SELECT header FROM `tabPage Box Set` WHERE title = '"+box1_parent+"'", as_dict=True)[0].header
 	
 	#Part 2
 	#---------------
@@ -176,6 +177,7 @@ def get_context(context):
 		context.box2 = True
 		box2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part2'", as_dict=True)[0].value
 		context.boxes2 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box2_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.box_header2 = frappe.db.sql("SELECT header FROM `tabPage Box Set` WHERE title = '"+box2_parent+"'", as_dict=True)[0].header
 		
 	#Part 3
 	#---------------
@@ -247,6 +249,7 @@ def get_context(context):
 		context.box3 = True
 		box3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part3'", as_dict=True)[0].value
 		context.boxes3 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box3_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.box_header3 = frappe.db.sql("SELECT header FROM `tabPage Box Set` WHERE title = '"+box3_parent+"'", as_dict=True)[0].header
 		
 	#Part 4
 	#---------------
@@ -318,6 +321,7 @@ def get_context(context):
 		context.box4 = True
 		box4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part4'", as_dict=True)[0].value
 		context.boxes4 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box4_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.box_header4 = frappe.db.sql("SELECT header FROM `tabPage Box Set` WHERE title = '"+box4_parent+"'", as_dict=True)[0].header
 		
 	#Part 5
 	#---------------
@@ -389,3 +393,4 @@ def get_context(context):
 		context.box5 = True
 		box5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part5'", as_dict=True)[0].value
 		context.boxes5 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box5_parent+"' ORDER BY idx ASC", as_dict=True)
+		context.box_header5 = frappe.db.sql("SELECT header FROM `tabPage Box Set` WHERE title = '"+box5_parent+"'", as_dict=True)[0].header
