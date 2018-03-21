@@ -67,9 +67,12 @@ def get_context(context):
 	
 	#-->card
 	context.card1 = False
+	context.incl_modal = False
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Cards":
 		context.card1 = True
 		card1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'cards_part1'", as_dict=True)[0].value
+		if int(frappe.db.sql("SELECT incl_modal FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].incl_modal) == 1:
+			context.incl_modal = True
 		context.card1_title = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].card_intro
 		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+card1_parent+"'", as_dict=True)[0].mob_qty)
 		context.card1_mob_qty = 12 / mobile_qty

@@ -11,6 +11,22 @@
 		{% if card.link_twitter %}<a href="{{ card.link_twitter }}" class="x"><i class="fa fa-twitter"></i></a>{% endif %}
 		{% if card.link_linkedin %}<a href="{{ card.link_linkedin }}" class="x"><i class="fa fa-linkedin"></i></a>{% endif %}
 		{% if card.link_facebook %}<a href="{{ card.link_facebook }}" class="x"><i class="fa fa-facebook"></i></a>{% endif %}
-		{% if card.btn_title %}<p><button href="{{ card.btn_link }}" class="x"{% if btn_bg %} style="background-color: {{ btn_bg }};"{% endif %}>{{ card.btn_title }}</button></p>{% endif %}
+		{% if card.btn_title %}<p><button id="{{ card.title }}"{% if not incl_modal %} href="{{ card.btn_link }}"{% endif %} class="x{% if incl_modal %} modal-btn{% endif %}"{% if btn_bg %} style="background-color: {{ btn_bg }};"{% endif %}>{{ card.btn_title }}</button></p>{% endif %}
 	</div>
+	{% if incl_modal %}
+	<!-- The Modal -->
+	<div class="libra-modal x-{{ card.title }}">
+		<!-- Modal content -->
+		<div class="libra-modal-content">
+			<span class="libra-modal-close">&times;</span>
+			<center><h1 class="libra-wrap">{{ card.title }}</h1></center>
+			{% if card.img_or_fa == "Image" %}
+			<img src="{{ card.card_img }}" alt="{{ card.title }}" style="width:100%;">
+			{% elif card.img_or_fa == "Fontawesome" %}
+			<center><i class="{{ card.card_fa }}" style="font-size: {{ card.card_fa_size }};"></i></center>
+			{% endif %}
+			<br><center><p>{{ card.subtitle_1 }}</p></center>
+		</div>
+	</div>
+	{% endif %}
 </div>
