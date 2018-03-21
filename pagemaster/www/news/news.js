@@ -9,6 +9,11 @@ $(document).ready(function() {
 	});
 	$('.categories').off("click").on("click", function() {
 		$(".post").toggle(false);
-		$(".post."+this.innerHTML).toggle(true);
+		var searchClass = this.innerHTML.replace(" ", ".");
+		$(".post."+searchClass).toggle(true);
+	});
+	$('.categories-all').off("click").on("click", function() {
+		$(".old").toggle(false);
+		$(".new").toggle(true);
 	});
 });

@@ -55,13 +55,11 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<ul class="list-unstyled">
-							<li><a class="categories">{{ categories[0].title }}</a>
+							<li><a class="categories-all">All categories</a>
 							</li>
 							{% for category in categories %}
-							{% if loop.index >= 2 %}
 							<li><a class="categories">{{ category.title }}</a>
 							</li>
-							{% endif %}
 							{% endfor %}
 						</ul>
 					</div>
