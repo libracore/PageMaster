@@ -119,4 +119,5 @@ role_home_page = {
 # override_whitelisted_methods = {
 # 	"frappe.desk.doctype.event.event.get_events": "pagemaster.event.get_events"
 # }
+fixtures = ["Custom Field"]
 

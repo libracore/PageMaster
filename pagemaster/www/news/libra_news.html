@@ -3,25 +3,26 @@
 	{% include "www/base/libra_navbar.html" %}
 <!-- /navbar -->
 <div class="container" style="margin-top: 60px;">
-	<div class="row">
+	<div class="row" style="background-color: white; margin-top: -8px;">
 		<!-- Blog Entries Column -->
 		<div class="col-sm-8">
 			<h1 class="page-header">{{ blog_title }}</h1>
 			{% for post in posts %}
-			<div class="post {{ post.blog_category }} {% if loop.index <= 3 %}new{% else %}old{% endif %}"{% if loop.index <= 3 %}{% else %} style="display: none;"{% endif %}>
 			<!-- Blog Post -->
-			<h2>
-				<a href="#">{{ post.title }}</a><br><small> by <a href="index.php">{{ post.blogger }}</a></small>
-			</h2>
-			<p><span class="glyphicon glyphicon-time"></span> {{ post.published_on }}</p>
-			<hr>
-			<img class="img-responsive" src="http://placehold.it/900x300" alt="">
-			<hr>
-			<p>{{ post.blog_intro }}</p>
-			<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-			<hr>
-			<!-- /Blog Post -->
+			<div class="post {{ post.blog_category }} {% if loop.index <= 3 %}new{% else %}old{% endif %}"{% if loop.index <= 3 %}{% else %} style="display: none;"{% endif %}>
+				<div class="col-sm-4">
+					<img class="img-responsive" src="http://placehold.it/900x300" alt="">
+				</div>
+				<div class="col-sm-8">
+					<h2 style="margin-top: 0px;">
+						<a href="#">{{ post.title }}</a><br><small> by {{ post.blogger }}</small>
+					</h2>
+					<p><span class="glyphicon glyphicon-time"></span> {{ post.published_on }}</p>
+					<p>{{ post.blog_intro }}</p>
+					<hr>
+				</div>
 			</div>
+			<!-- /Blog Post -->
 			{% endfor %}
 			<!-- Pager -->
 			<ul class="pager">
@@ -37,20 +38,20 @@
 		<!-- Blog Sidebar Widgets Column -->
 		<div class="col-sm-4">
 			<!-- Blog Search Well -->
-			<div class="well">
-				<h4>Blog Search</h4>
-				<div class="input-group">
-					<input type="text" class="form-control">
-					<span class="input-group-btn">
-						<button class="btn btn-default" type="button">
-							<span class="glyphicon glyphicon-search"></span>
-					</button>
-					</span>
-				</div>
-				<!-- /.input-group -->
-			</div>
+			<!-- <div class="well"> -->
+				<!-- <h4>Blog Search</h4> -->
+				<!-- <div class="input-group"> -->
+					<!-- <input type="text" class="form-control"> -->
+					<!-- <span class="input-group-btn"> -->
+						<!-- <button class="btn btn-default" type="button"> -->
+							<!-- <span class="glyphicon glyphicon-search"></span> -->
+					<!-- </button> -->
+					<!-- </span> -->
+				<!-- </div> -->
+				<!-- <!-- /.input-group -->
+			<!-- </div> -->
 			<!-- Blog Categories Well -->
-			<div class="well">
+			<div class="well" style="margin-top: 10px;">
 				<h4>Blog Categories</h4>
 				<div class="row">
 					<div class="col-lg-6">
