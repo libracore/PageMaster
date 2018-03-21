@@ -99,6 +99,13 @@ def get_context(context):
 		context.media1_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media1_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias1 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media1_parent+"' ORDER BY idx ASC", as_dict=True)
 	
+	#-->box
+	context.box1 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part1' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Box":
+		context.box1 = True
+		box1_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part1'", as_dict=True)[0].value
+		context.boxes1 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box1_parent+"' ORDER BY idx ASC", as_dict=True)
+	
 	#Part 2
 	#---------------
 	#ROW settings
@@ -162,6 +169,13 @@ def get_context(context):
 		context.media_title2 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media2_parent+"'", as_dict=True)[0].media_intro
 		context.media2_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media2_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias2 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media2_parent+"' ORDER BY idx ASC", as_dict=True)
+	
+	#-->box
+	context.box2 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part2' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Box":
+		context.box2 = True
+		box2_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part2'", as_dict=True)[0].value
+		context.boxes2 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box2_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 3
 	#---------------
@@ -226,6 +240,13 @@ def get_context(context):
 		context.media_title3 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media3_parent+"'", as_dict=True)[0].media_intro
 		context.media3_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media3_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias3 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media3_parent+"' ORDER BY idx ASC", as_dict=True)
+	
+	#-->box
+	context.box3 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part3' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Box":
+		context.box3 = True
+		box3_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part3'", as_dict=True)[0].value
+		context.boxes3 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box3_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 4
 	#---------------
@@ -290,6 +311,13 @@ def get_context(context):
 		context.media_title4 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media_title4+"'", as_dict=True)[0].media_intro
 		context.media4_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media4_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias4 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media4_parent+"' ORDER BY idx ASC", as_dict=True)
+	
+	#-->box
+	context.box4 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part4' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Box":
+		context.box4 = True
+		box4_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part4'", as_dict=True)[0].value
+		context.boxes4 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box4_parent+"' ORDER BY idx ASC", as_dict=True)
 		
 	#Part 5
 	#---------------
@@ -354,3 +382,10 @@ def get_context(context):
 		context.media_title5 = frappe.db.sql("SELECT media_intro FROM `tabMedia Set` WHERE title = '"+media5_parent+"'", as_dict=True)[0].media_intro
 		context.media5_bg_color = frappe.db.sql("SELECT media_bg_color FROM `tabMedia Set` WHERE title = '"+media5_parent+"'", as_dict=True)[0].media_bg_color
 		context.medias5 = frappe.db.sql("SELECT img_or_fa, media_fa, media_fa_size, media_img, media_img_size, media_img, subtitle, title, medi_align FROM `tabMedia` WHERE parent = '"+media5_parent+"' ORDER BY idx ASC", as_dict=True)
+	
+	#-->box
+	context.box5 = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'layout_part5' AND doctype = 'Main Page Setup'", as_dict=True)[0].value == "Box":
+		context.box5 = True
+		box5_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'Main Page Setup' AND field = 'box_part5'", as_dict=True)[0].value
+		context.boxes5 = frappe.db.sql("SELECT title, fontawesome, content FROM `tabPage Box` WHERE parent = '"+box5_parent+"' ORDER BY idx ASC", as_dict=True)

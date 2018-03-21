@@ -90,6 +90,12 @@ def get_data():
 			   "name": "Timeline Set",
 			   "label": _("Timeline Sets"),
 			   "description": _("Timeline Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Page Box Set",
+			   "label": _("Box Sets"),
+			   "description": _("Box Setup")
 			}
 		]
 	},

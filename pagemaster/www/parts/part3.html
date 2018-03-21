@@ -53,4 +53,13 @@
 	</div>
 	<div class="col-sm-2"></div>
 	{% endif %}
+	{% if box3 %}
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+	{% for box in boxes3 %}
+	{% include "www/bootstrap/libra_box.html" %}
+	{% endfor %}
+	</div>
+	<div class="col-sm-2"></div>
+	{% endif %}
 </div>
