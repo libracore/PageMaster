@@ -11,7 +11,7 @@
 			<!-- Blog Post -->
 			<div class="post {{ post.blog_category }} {% if loop.index <= 3 %}new{% else %}old{% endif %}"{% if loop.index <= 3 %}{% else %} style="display: none;"{% endif %}>
 				<div class="col-sm-4">
-					<img class="img-responsive" src="http://placehold.it/900x300" alt="">
+					<img class="img-responsive" src="{{ post.prev_img }}" alt="Preview Image of {{ post.title }}">
 				</div>
 				<div class="col-sm-8">
 					<h2 style="margin-top: 0px;">
@@ -27,10 +27,10 @@
 			<!-- Pager -->
 			<ul class="pager">
 				<li class="previous">
-					<a href="#">&larr; Older</a>
+					<a>&larr; Older</a>
 				</li>
 				<li class="next">
-					<a href="#">Newer &rarr;</a>
+					<a>Newer &rarr;</a>
 				</li>
 			</ul>
 			<!-- /Pager -->
