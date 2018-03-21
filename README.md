@@ -16,6 +16,7 @@ With the well-known modules of bootstrap like:
 * Cards
 * Medias
 * Timeline
+* Box
 * ...
 
 ...as well as integrated maps from google.
