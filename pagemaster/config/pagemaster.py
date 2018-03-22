@@ -33,9 +33,9 @@ def get_data():
 		"items": [
 			{
 			   "type": "doctype",
-			   "name": "Page Slideshow",
-			   "label": _("Has to be programmed!"),
-			   "description": _("Slideshows Setup")
+			   "name": "PageMaster Page",
+			   "label": _("Sub Page"),
+			   "description": _("Sub Page Setup")
 			}
 		]
 	},

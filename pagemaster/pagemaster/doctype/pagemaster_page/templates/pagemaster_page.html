@@ -1,0 +1,18 @@
+{% extends "www/auto_generator/libra_auto_base.html" %}
+{% block head %}
+	{% include "www/base/libra_head.html" %}
+{% endblock %}
+{% block body %}
+
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bg_img %}background-image: url({{ bg_img }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}{% if bg_color %}background-color: {{ bg_color }}{% endif %}">
+{% include "www/base/libra_navbar.html" %}
+<div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px; {% if part1_bg %}background-color: {{ part1_bg }};{% endif %}{% if part1_height %}height: {{ part1_height }}px;{% endif %}">
+	<h1>{{ title }}</h1>
+<!-- footer -->
+	{% include "www/base/libra_footer.html" %}
+<!-- /footer -->
+<!-- Scroll to top button -->
+	<button class="btn" id="ToTopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button> 
+</div>
+</body>
+{% endblock %}

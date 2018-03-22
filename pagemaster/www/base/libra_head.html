@@ -33,8 +33,8 @@
 	<script>
 		window.frappe = {};
     </script>
-	{% if google_enable %}
-	{% if google_id %}
+	{% if google_enable or enable %}
+	{% if google_id or id %}
 	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id={{ google_id }}"></script>
 	<script>
