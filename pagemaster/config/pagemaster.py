@@ -126,6 +126,12 @@ def get_data():
 			   "name": "PageMaster Footer",
 			   "label": _("Footer Settings"),
 			   "description": _("Footer Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "Google Analytics",
+			   "label": _("Google Analytics"),
+			   "description": _("Google Analytics Setup")
 			}
 		]
 	},
