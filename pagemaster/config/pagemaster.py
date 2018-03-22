@@ -105,6 +105,12 @@ def get_data():
 		"items": [
 			{
 			   "type": "doctype",
+			   "name": "Head Settings",
+			   "label": _("Header Settings"),
+			   "description": _("Head Setup")
+			},
+			{
+			   "type": "doctype",
 			   "name": "Navbar",
 			   "label": _("Navbar Settings"),
 			   "description": _("Navbar Setup")

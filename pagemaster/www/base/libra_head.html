@@ -1,7 +1,29 @@
 <head>
-	<title>libracore - intelligente Datenintegrationen</title>
+	<title>{% if head_title %}{{ head_title }}{% else %}libracore - intelligente Datenintegrationen{% endif %}</title>
+	{% block meta %}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="{% if meta_keywords %}{{ meta_keywords }}{% else %}libracore, GmbH, ERP, ERPNext, Open, Source{% endif %}">
+	<meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}Wir sind ein junges, hochmotiviertes Unternehmen welches Ihre Bedürfnisse an intelligente Datensysteme massgeschneidert implementiert. Unser Ziel ist Ihre Arbeitsabläufe durch die enge Vernetzung von Prozessen mit stets aktuellen Daten zu vereinfachen. Die Resultate sind gesteigerte Effizienz und Transparenz im Unternehmen, sowie die Reduktion von Fehlern. Mit dem Einsatz von Open Source Lösungen werden wiederkehrende Lizenzkosten eliminiert. Jede Lösung passen wir optimal auf ihr Geschäft an, Ihr Nutzen wird maximiert. Wir greifen auf über 50 Jahre Erfahrung in Prozessoptimierungen und der Implementation von unterstützenden Datensystemen zurück. Validierungsanforderungen kennen wir aus erfolgreichen Projekten in internationalen Grossunternehmen mit ISO 9001 und 13485 Zertifizierung. Damit können wir Sie bei Ihrem Implementierungsvorhaben umfassend beraten und unterstützen.{% endif %}">
+	<meta name="author" content="libracore GmbH">
+	<meta name="publisher" content="libracore GmbH">
+	<meta name="copyright" content="libracore GmbH">
+	<meta name="company" content="libracore GmbH">
+	<meta name="page-topic" content="{% if meta_page_topic %}{{ meta_page_topic }}{% else %}Open Source ERP-System ERPNext{% endif %}">
+	<meta name="robots" content="{% if meta_robots %}{{ meta_robots }}{% else %}index, follow{% endif %}">
+	<meta name="revisit-after" content="{% if meta_revisit_after %}{{ meta_revisit_after }}{% else %}7 days{% endif %}">
+	<meta name="googlebot" content="noodp">
+	<meta name="reply-to" content="info@libracore.com">
+	{% endblock %}
+	{% block favicon %}
+	<link rel="shortcut icon"
+		href="{{ (head_favicon or "/assets/pagemaster/images/libracore_ac_32x32.png") | abs_url }}"
+		type="image/x-icon">
+	<link rel="icon"
+		href="{{ (head_favicon or "/assets/pagemaster/images/libracore_ac_32x32.png") | abs_url }}"
+		type="image/x-icon">
+    {% endblock %}
+	
 	<script src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
 	<link rel="stylesheet" href="/assets/frappe/css/bootstrap.css">
 	<script src="/assets/frappe/js/lib/bootstrap.min.js"></script>
