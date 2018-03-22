@@ -57,6 +57,8 @@
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
 	{% if box_header3 %}{{ box_header3 }}{% endif %}
+	{% set box_height = box_height3 %}
+	{% set p_height = p_height3 %}
 	{% for box in boxes3 %}
 	{% include "www/bootstrap/libra_box.html" %}
 	{% endfor %}

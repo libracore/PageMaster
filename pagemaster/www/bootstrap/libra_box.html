@@ -2,9 +2,9 @@
 	<div class="box">							
 		<div class="icon">
 			<div class="image"><i class="{{ box.fontawesome }}" aria-hidden="true"></i></div>
-			<div class="info">
+			<div class="info" style="{% if box_height %}height: {{ box_height }}px; overflow: hidden;{% endif %}">
 				<h3 class="title">{{ box.title }}</h3>
-				<p>{{ box.content }}</p>
+				<p style="{% if p_height %}max-height: {{ p_height }}px;{% endif %}">{{ box.content }}</p>
 			</div>
 		</div>
 		<div class="space"></div>
