@@ -350,3 +350,9 @@ button.x:hover, a.x:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Fontawesome
+------------------------*/
+.fa {
+	color: #627F43;
+}

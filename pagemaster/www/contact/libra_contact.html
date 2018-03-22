@@ -58,9 +58,7 @@
 							<div class="image"><i class="fa fa-mobile" aria-hidden="true"></i></div>
 							<div class="info">
 								<h3 class="title">CONTACT</h3>
-								<p>
-									<i class="fa fa-mobile" aria-hidden="true"></i> &nbsp {% if phone_number %}{{ phone_number }}{% else %}(+41) 52 544 17 62{% endif %}
-								</p>
+								<p>{% if phone_number %}{{ phone_number }}{% else %}<i class="fa fa-mobile" aria-hidden="true"></i> &nbsp please define a phone number{% endif %}</p>
 							</div>
 						</div>
 						<div class="space"></div>
