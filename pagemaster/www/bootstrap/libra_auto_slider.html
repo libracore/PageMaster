@@ -1,0 +1,68 @@
+{% if ref.indicator_show == 1 %}
+	{% set indicator_show = True %}
+{% elif ref.indicator_show == 0 %}
+	{% set indicator_show = False %}
+{% endif %}
+{% if ref.slider_desc_below == 1 %}
+	{% set indicator_show = False %}
+{% endif %}
+{% if ref.left %}
+<div class="col-sm-{{ ref.left }}"></div>
+<div class="col-sm-{{ ref.middle }}">
+{% elif ref.right %}
+<div class="col-sm-{{ ref.middle }}">
+{% else %}
+<div class="col-sm-12">
+{% endif %}
+	{% if ref.slider_intro %}
+		{{ ref.slider_intro }}
+	{% endif %}
+	<div style="{% if ref.slider_width %}max-width: {{ ref.slider_width }};{% endif %}{% if ref.slider_height %} height: {{ ref.slider_height }};{% endif %}" id="carousel-example-generic" class="carousel slide " data-ride="carousel">
+		{% if indicator_show %}
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			{% for slider in ref.slider %} {% if loop.index >= 2 %}
+			<li data-target="#carousel-example-generic" data-slide-to="{{ loop.index }}"></li>
+			{% endif %}{% endfor %}
+		</ol>
+		{% endif %}
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img class="img slider" src="{{ ref.slider[0].slider_img }}" alt="{{ ref.slider[0].img_alt }}">
+				<div class="carousel-caption"{% if ref.slider_desc_below == 1 %} style="position: initial;"{% endif %}>
+					{{ ref.slider[0].img_title }}<br>
+					{{ ref.slider[0].img_description }}
+				</div>
+			</div>
+			{% for slider in ref.slider %} {% if loop.index >= 2 %}
+			<div class="item">
+				<img class="img slider" src="{{ slider.slider_img }}" alt="{{ slider.img_alt }}">
+				<div class="carousel-caption"{% if ref.slider_desc_below == 1 %} style="position: initial;"{% endif %}>
+					{{ slider.img_title }}<br>
+					{{ slider.img_description }}
+				</div>
+			</div>
+			{% endif %}{% endfor %}
+		</div>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="background-image: none;">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" style="background-image: none;">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+{% if ref.right %}
+{% if ref.right > 0 %}
+</div>
+<div class="col-sm-{{ ref.right }}"></div>
+{% else %}
+</div>
+{% endif %}
+{% else %}
+</div>
+{% endif %}

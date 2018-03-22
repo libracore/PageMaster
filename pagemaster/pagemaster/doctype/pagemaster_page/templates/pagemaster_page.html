@@ -7,7 +7,24 @@
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bg_img %}background-image: url({{ bg_img }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}{% if bg_color %}background-color: {{ bg_color }}{% endif %}">
 {% include "www/base/libra_navbar.html" %}
 <div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px; {% if part1_bg %}background-color: {{ part1_bg }};{% endif %}{% if part1_height %}height: {{ part1_height }}px;{% endif %}">
-	<h1>{{ title }}</h1>
+	{% for page in page_sections %}
+		{% if page.bs_select == "Image" %}
+			<div class="col-xs-12">
+				<img class="img main" src="{% if page.img_part1 %}{{ page.img_part1 }}{% endif %}">
+			</div>
+		{% elif page.bs_select == "Slideshow" %}
+			{% set ref = frappe.get_doc("Page Slideshow", page.slider_part1) %}
+			{% include "www/bootstrap/libra_auto_slider.html" %}
+		{% elif page.bs_select == "Cards" %}
+			{% set ref = frappe.get_doc("Page Card Set", page.cards_part1) %}
+		{% elif page.bs_select == "Media" %}
+			{% set ref = frappe.get_doc("Media Set", page.media_part1) %}
+		{% elif page.bs_select == "Text" %}
+			
+		{% elif page.bs_select == "Box" %}
+			{% set ref = frappe.get_doc("Page Slideshow", page.box_part1) %}
+		{% endif %}
+	{% endfor %}
 <!-- footer -->
 	{% include "www/base/libra_footer.html" %}
 <!-- /footer -->
