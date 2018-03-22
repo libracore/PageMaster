@@ -8,21 +8,60 @@
 {% include "www/base/libra_navbar.html" %}
 <div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px; {% if part1_bg %}background-color: {{ part1_bg }};{% endif %}{% if part1_height %}height: {{ part1_height }}px;{% endif %}">
 	{% for page in page_sections %}
+		<!-- Image -->
 		{% if page.bs_select == "Image" %}
 			<div class="col-xs-12">
 				<img class="img main" src="{% if page.img_part1 %}{{ page.img_part1 }}{% endif %}">
 			</div>
+		<!-- slideshow -->
 		{% elif page.bs_select == "Slideshow" %}
 			{% set ref = frappe.get_doc("Page Slideshow", page.slider_part1) %}
 			{% include "www/bootstrap/libra_auto_slider.html" %}
+		<!-- cards -->
 		{% elif page.bs_select == "Cards" %}
 			{% set ref = frappe.get_doc("Page Card Set", page.cards_part1) %}
+			{% set desktop_qty = ref.desktop_qty %}
+			{% set tablet_qty = ref.tablet_qty %}
+			{% set mob_qty = ref.mob_qty %}
+			{% set card_bg = ref.card_bg %}
+			{% set btn_bg = ref.btn_bg_color %}
+			{% set incl_modal = ref.incl_modal %}
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+			{% if ref.card_intro %}{{ ref.card_intro }}{% endif %}
+			{% for card in ref.page_card_link %}
+			{% include "www/bootstrap/libra_card.html" %}
+			{% endfor %}
+			</div>
+			<div class="col-sm-2"></div>
+		<!-- media -->
 		{% elif page.bs_select == "Media" %}
 			{% set ref = frappe.get_doc("Media Set", page.media_part1) %}
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8"{% if ref.media_bg_color %} style="background-color: {{ ref.media_bg_color }};"{% endif %}>
+				{% if ref.media_intro %}{{ ref.media_intro }}{% endif %}
+				{% set medias = ref.media_link %}
+				{% include "www/bootstrap/libra_media.html" %}
+			</div>
+			<div class="col-sm-2"></div>
 		{% elif page.bs_select == "Text" %}
-			
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				{{ page.txt_part1 }}
+			</div>
+			<div class="col-sm-2"></div>
 		{% elif page.bs_select == "Box" %}
-			{% set ref = frappe.get_doc("Page Slideshow", page.box_part1) %}
+			{% set ref = frappe.get_doc("Page Box Set", page.box_part1) %}
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+			{% if ref.header %}{{ ref.header }}{% endif %}
+			{% set box_height = ref.box_height %}
+			{% set p_height = ref.p_height %}
+			{% for box in ref.boxes %}
+			{% include "www/bootstrap/libra_box.html" %}
+			{% endfor %}
+			</div>
+			<div class="col-sm-2"></div>
 		{% endif %}
 	{% endfor %}
 <!-- footer -->
