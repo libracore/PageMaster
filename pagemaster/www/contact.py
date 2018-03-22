@@ -18,6 +18,12 @@ def get_context(context):
 	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_select' AND doctype = 'Body Settings'", as_dict=True)[0].value == "Color":
 		context.bodycolor = True
 		context.bodycolorcode = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_color' AND doctype = 'Body Settings'", as_dict=True)
+	
+	#google analytics
+	#-------------------------
+	if frappe.db.sql("SELECT value FROM `tabSingles` WHERE field = 'enable' AND doctype = 'Google Analytics'", as_dict=True)[0].value:
+		context.google_enable = int(frappe.db.sql("SELECT value FROM `tabSingles` WHERE field = 'enable' AND doctype = 'Google Analytics'", as_dict=True)[0].value)
+		context.google_id = frappe.db.sql("SELECT value FROM `tabSingles` WHERE field = 'id' AND doctype = 'Google Analytics'", as_dict=True)[0].value
 		
 	#navbar
 	#---------------------
