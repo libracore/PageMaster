@@ -89,12 +89,22 @@ frappe.ui.form.on('PageMaster Page', {
 			},
 				"callback": function(response) {
 				let content = response.message;
-				for (var i = 0; i < content.length; i++) {
-					/*frappe.msgprint(content[i].title);*/
-					var child = cur_frm.add_child('navlinks');
-					frappe.model.set_value(child.doctype, child.name, "title", content[i].title);
-					frappe.model.set_value(child.doctype, child.name, "link", content[i].link);
+				frappe.msgprint(frm.doc.navlinks.length.toString());
+				if (frm.doc.navlinks.length < 1) {
+					for (var i = 0; i < content.length; i++) {
+						var child = cur_frm.add_child('navlinks');
+						frappe.model.set_value(child.doctype, child.name, "title", content[i].title);
+						frappe.model.set_value(child.doctype, child.name, "link", content[i].link);
+						cur_frm.refresh_field('navlinks');
+						frappe.msgprint("biatch");
+					}
+				} else {
+					cur_frm.get_field('navlinks').grid.grid_rows.forEach(function(row) {
+							 row.remove();
+							 console.log("irgendwas");
+					});
 					cur_frm.refresh_field('navlinks');
+					
 				}
 			}
 		});
