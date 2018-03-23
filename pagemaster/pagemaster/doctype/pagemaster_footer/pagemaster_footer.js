@@ -42,6 +42,16 @@ function updateAllRecords(frm, docs) {
 							value: frm.doc["txt"]
 						}
 					});
+				} else {
+					frappe.call({
+						method: "pagemaster.pagemaster.doctype.pagemaster_footer.pagemaster_footer.updateValues",
+						args: {
+							doctype: "PageMaster Page",
+							name: docs[i].name,
+							field: doc_field,
+							value: ""
+						}
+					});
 				}
 			} else if (doc_field == "footer_link_title") {
 				if (frm.doc["link_title"]) {
@@ -52,6 +62,16 @@ function updateAllRecords(frm, docs) {
 							name: docs[i].name,
 							field: doc_field,
 							value: frm.doc["link_title"]
+						}
+					});
+				} else {
+					frappe.call({
+						method: "pagemaster.pagemaster.doctype.pagemaster_footer.pagemaster_footer.updateValues",
+						args: {
+							doctype: "PageMaster Page",
+							name: docs[i].name,
+							field: doc_field,
+							value: ""
 						}
 					});
 				}
@@ -66,6 +86,16 @@ function updateAllRecords(frm, docs) {
 							value: frm.doc["link"]
 						}
 					});
+				} else {
+					frappe.call({
+						method: "pagemaster.pagemaster.doctype.pagemaster_footer.pagemaster_footer.updateValues",
+						args: {
+							doctype: "PageMaster Page",
+							name: docs[i].name,
+							field: doc_field,
+							value: ""
+						}
+					});
 				}
 			} else {
 				if (frm.doc[doc_field]) {
@@ -76,6 +106,16 @@ function updateAllRecords(frm, docs) {
 							name: docs[i].name,
 							field: doc_field,
 							value: frm.doc[doc_field]
+						}
+					});
+				} else {
+					frappe.call({
+						method: "pagemaster.pagemaster.doctype.pagemaster_footer.pagemaster_footer.updateValues",
+						args: {
+							doctype: "PageMaster Page",
+							name: docs[i].name,
+							field: doc_field,
+							value: ""
 						}
 					});
 				}
