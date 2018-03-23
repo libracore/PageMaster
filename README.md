@@ -10,6 +10,7 @@ Easy way to create:
 * About-Us page
 * Product page (in development)
 * Contact page
+* Sub-Pages
 
 With the well-known modules of bootstrap like:
 * Slideshows
