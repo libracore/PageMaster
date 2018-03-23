@@ -8,3 +8,7 @@ from frappe.model.document import Document
 
 class GoogleAnalytics(Document):
 	pass
+
+@frappe.whitelist()
+def updateValues(doctype, name, field, value):
+	frappe.db.set_value(doctype, name, field, value, update_modified=False)

@@ -29,15 +29,29 @@ function getAllSubpages(frm) {
 function updateAllRecords(frm, docs) {
 	for (var i = 0; i < docs.length; i++) {
 		for (doc_field in docs[i]) {
-			frappe.call({
-				method: "pagemaster.pagemaster.doctype.head_settings.head_settings.updateValues",
-				args: {
-					doctype: "PageMaster Page",
-					name: docs[i].name,
-					field: doc_field,
-					value: frm.doc[doc_field]
+			if (doc_field != "name") {
+				if (frm.doc[doc_field]) {
+					frappe.call({
+						method: "pagemaster.pagemaster.doctype.head_settings.head_settings.updateValues",
+						args: {
+							doctype: "PageMaster Page",
+							name: docs[i].name,
+							field: doc_field,
+							value: frm.doc[doc_field]
+						}
+					});
+				} else {
+					frappe.call({
+						method: "pagemaster.pagemaster.doctype.pagemaster_footer.pagemaster_footer.updateValues",
+						args: {
+							doctype: "PageMaster Page",
+							name: docs[i].name,
+							field: doc_field,
+							value: ""
+						}
+					});
 				}
-			});
+			}
 		}
 	}
 }
