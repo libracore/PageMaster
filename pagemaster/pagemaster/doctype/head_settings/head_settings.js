@@ -7,7 +7,8 @@ frappe.ui.form.on('Head Settings', {
 			function() {
 				getAllSubpages(frm);
 				frappe.show_alert('All Subpages are updated', 5);
-		});
+			}
+		);
 	}
 });
 

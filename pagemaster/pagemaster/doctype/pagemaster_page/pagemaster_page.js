@@ -3,11 +3,11 @@
 
 frappe.ui.form.on('PageMaster Page', {
 	onload: function(frm) {
-			getBody(frm);
+			/* getBody(frm);
 			getNavbar(frm);
 			getFooter(frm);
 			getGoogle(frm);
-			getHeader(frm);
+			getHeader(frm); */
 	},
 	refresh: function(frm) {
 		frm.add_custom_button(__("Get Default Page Parameter"),
