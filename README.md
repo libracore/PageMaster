@@ -11,6 +11,7 @@ Easy way to create:
 * Product page (in development)
 * Contact page
 * Sub-Pages
+* Dashboards (in development)
 
 With the well-known modules of bootstrap like:
 * Slideshows
