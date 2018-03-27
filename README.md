@@ -23,6 +23,11 @@ With the well-known modules of bootstrap like:
 
 ...as well as integrated maps from google.
 
+And should a website be created without great effort, without using the existing structure; So this app offers the possibility to create your own template with an embedded Drag & Drop Template Builder [Grapesjs](https://github.com/artf/grapesjs).
+
+### Additional Feature
+This app also includes all the features of the [libracore FullSize](https://github.com/libracore/fullsize) tool
+
 ## Requirements
 Requires an [ERPNext server instance](https://github.com/frappe/erpnext)
 
