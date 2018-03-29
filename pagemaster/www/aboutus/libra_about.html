@@ -15,17 +15,39 @@
 	<!-- cards -->
 	{% if card %}
 	<div style="height: 25px;"></div>
-	<div class="col-sm-2"></div>
-	<div class="col-sm-8">
-		{% set card_bg = card_bg_color %}
-		{% set btn_bg = card_btn_bg_color %}
-		{% for card in cards %}
-		{% include "www/bootstrap/libra_card.html" %}
-		{% endfor %}
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			{% set card_bg = card_bg_color %}
+			{% set btn_bg = card_btn_bg_color %}
+			{% for card in cards %}
+			{% include "www/bootstrap/libra_card.html" %}
+			{% endfor %}
+		</div>
+		<div class="col-sm-2"></div>
 	</div>
-	<div class="col-sm-2"></div>
 	{% endif %}
 	<!-- /card -->
+	<!-- partner -->
+	{% if partner_card %}
+	<div style="height: 25px;"></div>
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			{% set card_title = card_titleX %}
+			{% set mob_qty = mob_qtyX %}
+			{% set tablet_qty = tablet_qtyX %}
+			{% set desktop_qty = desktop_qtyX %}
+			{% set card_bg = card_bg_colorX %}
+			{% set btn_bg = card_btn_bg_colorX %}
+			{% for card in cardsX %}
+			{% include "www/bootstrap/libra_card.html" %}
+			{% endfor %}
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
+	{% endif %}
+	<!-- /partner -->
 <!-- /content -->
 <!-- footer -->
 	{% include "www/base/libra_footer.html" %}
