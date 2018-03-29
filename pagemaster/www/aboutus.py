@@ -64,5 +64,25 @@ def get_context(context):
 		context.card_btn_bg_color = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+card_parent+"'", as_dict=True)[0].btn_bg_color
 		context.cards = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+card_parent+"' ORDER BY idx ASC", as_dict=True)
 		
+	#partner cards
+	#--------------------------
+	context.partner_card = False
+	if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'incl_partner' AND doctype = 'About Us'", as_dict=True)[0].value == "1":
+		context.partner_card = True
+		partner_card_parent = frappe.db.sql("SELECT value FROM `tabSingles`WHERE doctype = 'About Us' AND field = 'partner_card'", as_dict=True)[0].value
+		context.card_titleX = frappe.db.sql("SELECT card_intro FROM `tabPage Card Set` WHERE title = '"+partner_card_parent+"'", as_dict=True)[0].card_intro
+		mobile_qty = int(frappe.db.sql("SELECT mob_qty FROM `tabPage Card Set` WHERE title = '"+partner_card_parent+"'", as_dict=True)[0].mob_qty)
+		context.mob_qtyX = 12 / mobile_qty
+		tablet_qty = int(frappe.db.sql("SELECT tablet_qty FROM `tabPage Card Set` WHERE title = '"+partner_card_parent+"'", as_dict=True)[0].tablet_qty)
+		context.tablet_qtyX = 12 / tablet_qty
+		desktop_qty = int(frappe.db.sql("SELECT desktop_qty FROM `tabPage Card Set` WHERE title = '"+partner_card_parent+"'", as_dict=True)[0].desktop_qty)
+		context.desktop_qtyX = 12 / desktop_qty
+		context.card_bg_colorX = frappe.db.sql("SELECT card_bg_color FROM `tabPage Card Set` WHERE title = '"+partner_card_parent+"'", as_dict=True)[0].card_bg_color
+		context.card_btn_bg_colorX = frappe.db.sql("SELECT btn_bg_color FROM `tabPage Card Set` WHERE title = '"+partner_card_parent+"'", as_dict=True)[0].btn_bg_color
+		context.cardsX = frappe.db.sql("SELECT img_or_fa, card_fa, card_fa_size, link_linkedin, card_img, title, link_twitter, subtitle_1, subtitle_2, btn_link, link_facebook, btn_title FROM `tabPage Cards` WHERE parent = '"+partner_card_parent+"' ORDER BY idx ASC", as_dict=True)
+		
 	#introduction
 	context.intro = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'introduction' AND doctype = 'About Us'", as_dict=True)[0].value
+	
+	#post scriptum
+	context.post_scriptum = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'ps' AND doctype = 'About Us'", as_dict=True)[0].value
