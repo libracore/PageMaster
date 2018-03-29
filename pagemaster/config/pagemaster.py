@@ -100,6 +100,24 @@ def get_data():
 		]
 	},
 	{
+		"label": _("Dashboard Settings"),
+		"icon": "fa fa-bookmark",
+		"items": [
+			{
+			   "type": "doctype",
+			   "name": "PageMaster Dashboard",
+			   "label": _("Dashboard"),
+			   "description": _("Dashboard Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "PageMaster Dashboard Item",
+			   "label": _("Charts"),
+			   "description": _("Charts Setup")
+			}
+		]
+	},
+	{
 		"label": _("General Settings"),
 		"icon": "fa fa-bookmark",
 		"items": [
@@ -134,5 +152,5 @@ def get_data():
 			   "description": _("Google Analytics Setup")
 			}
 		]
-	},
+	}
 ]
