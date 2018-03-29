@@ -1,0 +1,94 @@
+{% extends "www/auto_generator/libra_auto_base.html" %}
+{% block head %}
+<script>
+	window.frappe = {};
+</script>
+<script src="/assets/pagemaster/js/libra_dashboard.js"></script>
+<script src="/assets/pagemaster/js/frappe-charts.min.iife.js"></script>
+<script type="text/javascript" src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
+{% endblock %}
+{% block body %}
+<body>
+<div id="not-permitted">
+	<div class='page-card'>
+		<div class='page-card-head'>
+			<span class='indicator darkgrey'>No permissions</span>
+		</div>
+		<p>The page you are looking for required a valid login. Please login first.</p>
+		<div><a href='/login' class='btn btn-primary btn-sm'>Login</a></div>
+	</div>
+</div>
+<div id="chart"></div>
+
+<style>
+a {
+	text-decoration: none;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #36414C;
+}
+.indicator.darkgrey::before, .indicator-right.darkgrey::after {
+    background: red;
+}
+.indicator::before {
+    margin: 0 4px 0 0px;
+}
+.indicator::before, .indicator-right::after {
+    content: '';
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+}
+.page-card {
+    max-width: 360px;
+    padding: 15px;
+    margin: 70px auto;
+    border: 1px solid #d1d8dd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+.page-card .page-card-head {
+    padding: 10px 15px;
+    margin: -15px;
+        margin-bottom: -15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #d1d8dd;
+}
+.pp {
+    margin: 10px 0px;
+}
+.btn {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    border-radius: 4px;
+	color: #fff;
+	background-color: #2b33ff;
+	border-color: #0711ff;
+}
+</style>
+<!-- csrf_token -->
+</body>
+{% endblock %}
