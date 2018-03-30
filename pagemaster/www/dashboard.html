@@ -2,6 +2,7 @@
 {% block head %}
 <script>
 	window.frappe = {};
+	frappe.content = {{ content }};
 </script>
 <script src="/assets/pagemaster/js/libra_dashboard.js"></script>
 <script src="/assets/pagemaster/js/frappe-charts.min.iife.js"></script>
@@ -18,7 +19,15 @@
 		<div><a href='/login' class='btn btn-primary btn-sm'>Login</a></div>
 	</div>
 </div>
-<div id="chart"></div>
+<div id="example" style="display: none;">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
+		<center><h1>This is an example</h1>
+		<h2>To setup your own Dashboard, got to "PageMaster > Dashboard"</h2></center>
+	</div>
+	<div class="col-sm-4"></div>
+	<div id="chart" class="col-sm-12"></div>
+</div>
 
 <style>
 a {

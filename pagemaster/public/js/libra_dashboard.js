@@ -1,35 +1,38 @@
 document.addEventListener("DOMContentLoaded", function(){
 	if (frappe.csrf_token != "None") {
-		// ToDo: Outsource this script in own .js and load dynamicly direct in .html for each record in dashboard doctype...
 		$("#not-permitted").toggle();
-		chartMixed();		
-		
-		/* let chart = new Chart( "#chart", { // or DOM element
-			data: {
-				// ToDo: replace variales with jinja
-				labels: ["12am-3am", "3am-6am", "6am-9am", "9am-12pm", "12pm-3pm", "3pm-6pm", "6pm-9pm", "9pm-12am"],
-				datasets: [
-					{
-						name: "Some Data", type: 'bar',
-						values: [25, 40, 30, 35, 8, 52, 17, -4]
-					},
-					{
-						name: "Another Set", type: 'bar',
-						values: [25, 50, -10, 15, 18, 32, 27, 14]
-					},
-					{
-						name: "Yet Another", type: 'line',
-						values: [15, 20, -3, -15, 58, 12, -17, 37]
-					}
-				],
-				yMarkers: [{ label: "Marker", value: 70 }],
-				yRegions: [{ label: "Region", start: -10, end: 50 }]
-			},
-			title: "My Awesome Chart",
-			type: "axis-mixed", // or 'bar', 'line', 'pie', 'percentage'
-			height: 250,
-			colors: ['purple', '#ffa3ef', 'red']
-		}); */
+		if (!frappe.content) {
+			// ToDo: Outsource this script in own .js and load dynamicly direct in .html for each record in dashboard doctype...
+			$("#example").toggle();
+			chartMixed();		
+			
+			/* let chart = new Chart( "#chart", { // or DOM element
+				data: {
+					// ToDo: replace variales with jinja
+					labels: ["12am-3am", "3am-6am", "6am-9am", "9am-12pm", "12pm-3pm", "3pm-6pm", "6pm-9pm", "9pm-12am"],
+					datasets: [
+						{
+							name: "Some Data", type: 'bar',
+							values: [25, 40, 30, 35, 8, 52, 17, -4]
+						},
+						{
+							name: "Another Set", type: 'bar',
+							values: [25, 50, -10, 15, 18, 32, 27, 14]
+						},
+						{
+							name: "Yet Another", type: 'line',
+							values: [15, 20, -3, -15, 58, 12, -17, 37]
+						}
+					],
+					yMarkers: [{ label: "Marker", value: 70 }],
+					yRegions: [{ label: "Region", start: -10, end: 50 }]
+				},
+				title: "My Awesome Chart",
+				type: "axis-mixed", // or 'bar', 'line', 'pie', 'percentage'
+				height: 250,
+				colors: ['purple', '#ffa3ef', 'red']
+			}); */
+		}
 	}
 });
 
