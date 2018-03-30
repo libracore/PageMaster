@@ -4,15 +4,21 @@ from frappe import _
 def get_data():
     return[
 	{
-		"label": _("Main Pages"),
+		"label": _("Dashboard Settings"),
 		"icon": "fa fa-bookmark",
 		"items": [
-		   {
+			{
 			   "type": "doctype",
-			   "name": "ttt",
-			   "label": _("ttt"),
-			   "description": _("Setup Tools for the Main Page")
-		   }
+			   "name": "PageMaster Dashboard",
+			   "label": _("Dashboard"),
+			   "description": _("Dashboard Setup")
+			},
+			{
+			   "type": "doctype",
+			   "name": "PageMaster Dashboard Item",
+			   "label": _("Charts"),
+			   "description": _("Charts Setup")
+			}
 		]
 	}
 ]

@@ -83,7 +83,7 @@ function chartMixed() {
 let args = {
 	data: typeData,
 	type: 'axis-mixed',
-	height: 250,
+	height: 500,
 	colors: ['purple', 'magenta', 'light-blue'],
 
 	maxLegendPoints: 6,

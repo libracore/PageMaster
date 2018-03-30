@@ -18,6 +18,9 @@ def get_data():
 			"icon": "fa fa-line-chart",
 			"type": "module",
 			"link": "/dashboard",
-			"label": _("Dashboard")
+			"label": _("Dashboard"),
+			"blocked": 0,
+			"hidden": 0,
+			"reverse": 0
 		}
 	]
