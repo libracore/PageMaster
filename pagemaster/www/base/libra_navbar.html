@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a href="/index">
-				<img style="width: 150px; margin: 5px;" src="/assets/pagemaster/images/libracore_wordmark.png" />
+				<img style="width: 150px; margin: 5px;" src="{% if nav_logo %}{{ nav_logo }}{% else %}/assets/pagemaster/images/libracore_wordmark.png{% endif %}" />
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
