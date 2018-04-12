@@ -43,9 +43,9 @@
 							<div class="info">
 								<h3 class="title">MAIL & WEBSITE</h3>
 								<p>
-									<i class="fa fa-envelope" aria-hidden="true"></i> &nbsp {% if info_mail %}<a href="mailto:{{ info_mail }}?Subject=Contact" target="_top">{{ info_mail }}</a>{% else %}<a href="mailto:info@libracore.com?Subject=Contact" target="_top">info@libracore.com</a>{% endif %}
+									{% if info_mail %}<i class="fa fa-envelope" aria-hidden="true"></i> &nbsp <a href="mailto:{{ info_mail }}?Subject=Contact" target="_top">{{ info_mail }}</a>{% endif %}
 									<br>
-									<i class="fa fa-globe" aria-hidden="true"></i> &nbsp {% if website_link %}{{ website_link }}{% else %}https://libracore.com{% endif %}
+									{% if website_link %}<i class="fa fa-globe" aria-hidden="true"></i> &nbsp {{ website_link }}{% endif %}
 								</p>
 							</div>
 						</div>
@@ -58,7 +58,7 @@
 							<div class="image"><i class="fa fa-mobile" aria-hidden="true"></i></div>
 							<div class="info">
 								<h3 class="title">CONTACT</h3>
-								<p>{% if phone_number %}{{ phone_number }}{% else %}<i class="fa fa-mobile" aria-hidden="true"></i> &nbsp please define a phone number{% endif %}</p>
+								<p><i class="fa fa-mobile" aria-hidden="true"></i> &nbsp {% if phone_number %}{{ phone_number }}{% else %} please define a phone number{% endif %}</p>
 							</div>
 						</div>
 						<div class="space"></div>
@@ -71,7 +71,7 @@
 							<div class="info">
 								<h3 class="title">ADDRESS</h3>
 								<p>
-									<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp {% if info_address %}{{ info_address }}{% else %}Jonastrasse 7<br>8636 Wald ZH<br>Schweiz{% endif %}
+									<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp {% if info_address %}{{ info_address }}{% else %}Your Address{% endif %}
 								</p>
 							</div>
 						</div>
