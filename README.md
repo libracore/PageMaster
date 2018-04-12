@@ -36,6 +36,9 @@ From the frappe-bench folder, execute:
 ```
 $ bench get-app https://github.com/libracore/pagemaster
 $ bench install-app pagemaster
+$ chown -R frappe:frappe *
+$ bench migrate
+$ bench restart
 ```
 
 ## License
