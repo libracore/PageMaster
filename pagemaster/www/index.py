@@ -5,6 +5,16 @@ def get_context(context):
 	#part qty
 	context.parts = int(frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'section_qty' AND doctype = 'Main Page Setup'", as_dict=True)[0].value)
 	
+	#meta
+	#---------------
+	context.head_title = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'head_title' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.head_favicon = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'head_favicon' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_keywords = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_keywords' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_description = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_description' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_page_topic = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_page_topic' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_robots = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_robots' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_revisit_after = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_revisit_after' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	
 	#body
 	#---------------
 	# -->Background-Image
@@ -25,6 +35,7 @@ def get_context(context):
 	context.nav_bg_color = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_bg_color' AND doctype = 'Navbar'", as_dict=True)[0].value
 	context.nav_txt_color = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_txt_color' AND doctype = 'Navbar'", as_dict=True)[0].value
 	context.navlinks = frappe.db.sql("SELECT title, link FROM `tabNavbar Item` WHERE parent = 'Navbar' ORDER BY idx ASC", as_dict=True)
+	context.nav_logo = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_logo' AND doctype = 'Navbar'", as_dict=True)[0].value
 	
 	#footer
 	#-------------------
