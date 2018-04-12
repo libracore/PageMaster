@@ -22,6 +22,7 @@ def get_context(context):
 	context.nav_bg_color = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_bg_color' AND doctype = 'Navbar'", as_dict=True)[0].value
 	context.nav_txt_color = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_txt_color' AND doctype = 'Navbar'", as_dict=True)[0].value
 	context.navlinks = frappe.db.sql("SELECT title, link FROM `tabNavbar Item` WHERE parent = 'Navbar' ORDER BY idx ASC", as_dict=True)
+	context.nav_logo = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'nav_logo' AND doctype = 'Navbar'", as_dict=True)[0].value
 	
 	#footer
 	#-------------------
