@@ -49,7 +49,7 @@ role_home_page = {
 # ----------
 
 # automatically create page for each record of this doctype
-website_generators = ["PageMaster Page"]
+website_generators = ["PageMaster Page", "PageMaster Blog Post"]
 
 # Installation
 # ------------
