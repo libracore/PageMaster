@@ -64,5 +64,5 @@ def get_context(context):
 	context.categories = frappe.get_all('Blog Category', filters={'published': '1'}, fields=['title'])
 	
 	#blog posts
-	context.posts = frappe.get_list('PageMaster Blog Post', fields=['title', 'blog_category', 'blogger', 'published_on', 'blog_intro', 'prev_img'], filters={'published': '1'}, order_by='published_on desc', limit_page_length=None, ignore_permissions=True)
+	context.posts = frappe.get_list('PageMaster Blog Post', fields=['title', 'blog_category', 'blogger', 'published_on', 'blog_intro', 'prev_img', 'route'], filters={'published': '1'}, order_by='published_on desc', limit_page_length=None, ignore_permissions=True)
 	#context.posts = frappe.db.sql("SELECT title, blog_category, blogger, published_on, blog_intro, prev_img FROM `tabPageMaster Blog Post` WHERE published='1'", as_dict=True)
