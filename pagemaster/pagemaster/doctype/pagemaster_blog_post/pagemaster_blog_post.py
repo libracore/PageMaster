@@ -40,10 +40,9 @@ class PageMasterBlogPost(WebsiteGenerator):
 		#body
 		#---------------
 		# -->Background-Image
-		context.bodyimage = False
+		context.bg_img = False
 		if frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_select' AND doctype = 'Body Settings'", as_dict=True)[0].value == "Image":
-			context.bodyimage = True
-			context.bodyimagesource = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_img' AND doctype = 'Body Settings'", as_dict=True)
+			context.bg_img = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'bg_img' AND doctype = 'Body Settings'", as_dict=True)[0].value
 			
 		# -->Background-Color
 		context.bodycolor = False
