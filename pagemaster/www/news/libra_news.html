@@ -15,7 +15,7 @@
 				</div>
 				<div class="col-sm-8">
 					<h2 style="margin-top: 0px;">
-						<a href="#">{{ post.title }}</a><br><small> by {{ post.blogger }}</small>
+						<a href="{{ post.route }}">{{ post.title }}</a><br><small> by {{ post.blogger }}</small>
 					</h2>
 					<p><span class="glyphicon glyphicon-time"></span> {{ post.published_on }}</p>
 					<p>{{ post.blog_intro }}</p>
@@ -37,20 +37,6 @@
 		</div>
 		<!-- Blog Sidebar Widgets Column -->
 		<div class="col-sm-4">
-			<!-- Blog Search Well -->
-			<!-- <div class="well"> -->
-				<!-- <h4>Blog Search</h4> -->
-				<!-- <div class="input-group"> -->
-					<!-- <input type="text" class="form-control"> -->
-					<!-- <span class="input-group-btn"> -->
-						<!-- <button class="btn btn-default" type="button"> -->
-							<!-- <span class="glyphicon glyphicon-search"></span> -->
-					<!-- </button> -->
-					<!-- </span> -->
-				<!-- </div> -->
-				<!-- <!-- /.input-group -->
-			<!-- </div> -->
-			<!-- Blog Categories Well -->
 			<div class="well" style="margin-top: 10px;">
 				<h4>Blog Categories</h4>
 				<div class="row">
@@ -91,8 +77,8 @@
 			});
 		})
 	</script>
-	<script>
-		{% include "www/news/news.js" %}
-	</script>
+	<!-- <script>
+		include "www/news/news.js"
+	</script> -->
 	<!-- csrf_token -->
 </body>

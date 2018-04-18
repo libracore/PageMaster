@@ -15,6 +15,10 @@ def get_context(context):
 	context.meta_page_topic = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_page_topic' AND doctype = 'Head Settings'", as_dict=True)[0].value
 	context.meta_robots = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_robots' AND doctype = 'Head Settings'", as_dict=True)[0].value
 	context.meta_revisit_after = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_revisit_after' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_author = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_author' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_publisher = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_publisher' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_copyright = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_copyright' AND doctype = 'Head Settings'", as_dict=True)[0].value
+	context.meta_company = frappe.db.sql("SELECT value FROM tabSingles WHERE field = 'meta_company' AND doctype = 'Head Settings'", as_dict=True)[0].value
 	
 	#body
 	#---------------
@@ -60,4 +64,5 @@ def get_context(context):
 	context.categories = frappe.get_all('Blog Category', filters={'published': '1'}, fields=['title'])
 	
 	#blog posts
-	context.posts = frappe.get_list('Blog Post', fields=['title', 'blog_category', 'blogger', 'published_on', 'blog_intro', 'prev_img'], filters={'published': '1'}, order_by='published_on desc', limit_page_length=None, ignore_permissions=True)
+	context.posts = frappe.get_list('PageMaster Blog Post', fields=['title', 'blog_category', 'blogger', 'published_on', 'blog_intro', 'prev_img', 'route'], filters={'published': '1'}, order_by='published_on desc', limit_page_length=None, ignore_permissions=True)
+	#context.posts = frappe.db.sql("SELECT title, blog_category, blogger, published_on, blog_intro, prev_img FROM `tabPageMaster Blog Post` WHERE published='1'", as_dict=True)
