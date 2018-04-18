@@ -45,7 +45,7 @@ def get_data():
 		"items": [
 			{
 			   "type": "doctype",
-			   "name": "Blog Post",
+			   "name": "PageMaster Blog Post",
 			   "label": _("Posts"),
 			   "description": _("News / Blog Post")
 			},

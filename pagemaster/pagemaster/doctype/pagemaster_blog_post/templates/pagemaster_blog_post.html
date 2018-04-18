@@ -1,0 +1,41 @@
+{% extends "www/auto_generator/libra_auto_base.html" %}
+{% block head %}
+	{% include "www/base/libra_head.html" %}
+{% endblock %}
+{% block body %}
+
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60" style="{% if bg_img %}background-image: url({{ bg_img }});-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center top;{% endif %}{% if bg_color %}background-color: {{ bg_color }}{% endif %}">
+{% include "www/base/libra_navbar.html" %}
+<div class="row" id="top" style="margin-top: 80px; margin-left: 0px; margin-right: 0px;"></div>
+<div class="row">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
+		<div class="media">
+		  <div class="media-left media-middle">
+			<img src="{{ prev_img }}" alt="{{ prev_img }}" class="media-object" style="max-width:300px;">
+		  </div>
+		  <div class="media-body" style="vertical-align: middle;">
+			<h4 class="media-heading">{{ title }}</h4>
+			<p>{{ blog_intro }}</p>
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-4"></div>
+</div>
+<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		{{ content }}
+	</div>
+	<div class="col-sm-2"></div>
+</div>
+<!-- <div class="blog-comments">
+	include 'templates/includes/comments/comments.html'
+</div> -->
+<!-- footer -->
+	{% include "www/base/libra_footer.html" %}
+<!-- /footer -->
+<!-- Scroll to top button -->
+	<button class="btn" id="ToTopBtn" title="Go to top"><i class="fa fa-angle-up"></i></button> 
+</body>
+{% endblock %}
